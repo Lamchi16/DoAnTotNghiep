@@ -34,7 +34,7 @@ function Login({ navigation }) {
 				"Sai tên đăng nhập hoặc mật khẩu!\nThử lại"
 			);
 		}
-		navigation.navigate("HomeScreen");
+		navigation.navigate("BottomTab");
 	};
 
 	return (

@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 	},
 	content: {
+		alignItems: "center",
 		justifyContent: "center",
 		paddingHorizontal: 16,
 		paddingVertical: 20,
@@ -39,6 +40,11 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		color: "#fff",
 		fontWeight: "bold",
+	},
+	StyleImage: {
+		width: 150,
+		height: 200,
+		marginTop: 20,
 	},
 });
 export default styles;

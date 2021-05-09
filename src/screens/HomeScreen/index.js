@@ -18,27 +18,44 @@ function HomeScreen({ navigation }) {
 	return (
 		<View style={styles.container}>
 			<Header
-			label={"trang chủ"}
+				label={"trang chủ"}
 				style={styles.Header}></Header>
+
 			<View style={styles.content}>
+				<Image
+					style={styles.StyleImage}
+					source={require("../../images/image1.png")}
+				/>
 				<Text style={styles.title}>
 					Thông tin sinh viên
 				</Text>
 
+				<Text style={styles.textInfo}>Họ tên: ĐTPA</Text>
 				<Text style={styles.textInfo}>
-					Họ tên: Trần Hoàng Lâm
+					Mã số sinh viên: 123123
 				</Text>
 				<Text style={styles.textInfo}>
-					Mã số sinh viên: 180937
+					Ngày sinh: 21/10/2000
 				</Text>
-				<Text style={styles.textInfo}>
-					Ngày sinh: 24/12/2000
-				</Text>
-				<TouchableOpacity
-					onPress={() => navigation.navigate("Outcome")}
-					style={styles.button}>
-					<Text style={styles.txtBtn}>Xem điểm</Text>
-				</TouchableOpacity>
+				{/* <View
+					style={{
+						flex: 1,
+						flexDirection: "row",
+						justifyContent: "space-between",
+					}}>
+					<TouchableOpacity
+						onPress={() => navigation.navigate("Outcome")}
+						style={styles.button}>
+						<Text style={styles.txtBtn}>Xem điểm</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						onPress={() => navigation.navigate("Outcome")}
+						style={styles.button}>
+						<Text style={styles.txtBtn}>
+							Đăng kí học lại
+						</Text>
+					</TouchableOpacity>
+				</View> */}
 			</View>
 		</View>
 	);
