@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Picker } from "@react-native-community/picker";
+import RNPickerSelect from "react-native-picker-select";
 import {
 	Alert,
 	Text,
@@ -23,81 +24,37 @@ function StudyAgain(navigation) {
 				label={"trang chủ"}
 				style={styles.Header}></Header>
 			<View style={styles.container}>
-				<Picker
-					style={styles.picker}
-					selectedValue={faculty}
-					style={{ height: 50, width: 300 }}
-					onValueChange={(itemValue, itemIndex) =>
-						setFaculty(itemValue)
-					}>
-					<Picker.Item label='Chọn Khoa' value='' />
-					<Picker.Item
-						label='Công nghệ thông tin'
-						value='CNTT'
+				<View style={styles.line}>
+					<Text>Khoa: </Text>
+					<RNPickerSelect
+						onValueChange={(value) => console.log(value)}
+						items={[
+							{
+								label: "Công nghệ thông tin",
+								value: "CNTT",
+							},
+							{ label: "Cơ khí", value: "CK" },
+							{ label: "Kế toán", value: "KT" },
+						]}
 					/>
-					<Picker.Item label='Cơ Khí' value='CK' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='JavaScript' value='js' />
-				</Picker>
-				<Picker
-					style={styles.picker}
-					selectedValue={job}
-					style={{ height: 50, width: 300 }}
-					onValueChange={(itemValue, itemIndex) =>
-						setJob(itemValue)
-					}>
-					<Picker.Item label='Chọn Nghề' value='' />
-					<Picker.Item
-						label='Lập trình máy tính'
-						value='LTMT'
+				</View>
+				<View style={styles.line}>
+					<Text>Nghề: </Text>
+					<RNPickerSelect
+						onValueChange={(value) => console.log(value)}
+						items={[
+							{
+								label: "Lập trình máy tính",
+								value: "LTMT",
+							},
+							{ label: "Thiết kế đỒ hoạ", value: "TKĐH" },
+							{
+								label: "Kế toán doanh nghiệp",
+								value: "KTDN",
+							},
+						]}
 					/>
-					<Picker.Item
-						label='Thiết kế đồ hoạ'
-						value='TKDH'
-					/>
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='JavaScript' value='js' />
-				</Picker>
-				<Picker
-					style={styles.picker}
-					selectedValue={lop}
-					style={{ height: 50, width: 300 }}
-					onValueChange={(itemValue, itemIndex) =>
-						setLop(itemValue)
-					}>
-					<Picker.Item label='Chọn Lớp' value='' />
-					<Picker.Item
-						label='Lập trình máy tính 1'
-						value='LTMT1'
-					/>
-					<Picker.Item
-						label='Thiết kế đồ hoạ 1'
-						value='TKDH1'
-					/>
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='JavaScript' value='js' />
-				</Picker>
-				<Picker
-					style={styles.picker}
-					selectedValue={subject}
-					style={{ height: 50, width: 300 }}
-					onValueChange={(itemValue, itemIndex) =>
-						setSubject(itemValue)
-					}>
-					<Picker.Item label='Chọn Môn' value='' />
-					<Picker.Item label='Lập trình C' value='C' />
-					<Picker.Item label='JAVA' value='JV' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='JavaScript' value='js' />
-				</Picker>
+				</View>
 				<TouchableOpacity
 					style={styles.button}
 					onPress={() => Alert.alert("Đăng kí thành công")}>

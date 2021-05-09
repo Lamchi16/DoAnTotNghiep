@@ -6,8 +6,10 @@ const styles = StyleSheet.create({
 		flex: 1,
 		paddingHorizontal: 16,
 		paddingTop: 20,
+		/* flexDirection: "row", */
 	},
 	picker: {
+		borderColor: "#000",
 		paddingVertical: 10,
 		marginVertical: 10,
 	},
