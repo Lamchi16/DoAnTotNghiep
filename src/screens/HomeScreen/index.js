@@ -2,46 +2,68 @@
 
 import React from "react";
 import {
-	Text,
-	View,
-	TouchableOpacity,
-	TouchableWithoutFeedback,
-	Image,
-	Alert,
-	Keyboard,
+  Text,
+  View,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  Image,
+  Alert,
+  Keyboard,
+  TextInput,
 } from "react-native";
 import styles from "./styles";
 import Header from "../../components/Header";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 function HomeScreen({ navigation }) {
-	return (
-		<View style={styles.container}>
-			<Header
-			label={"trang chủ"}
-				style={styles.Header}></Header>
-			<View style={styles.content}>
-				<Text style={styles.title}>
-					Thông tin sinh viên
-				</Text>
+  const [text, onChangeText] = React.useState(null);
+  return (
+    <View style={styles.container}>
+      <Header style={styles.Header}></Header>
+      <View style={styles.content}>
+        <View style={styles.select}>
+          <Text style={styles.title}>Khoa: </Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeText}
+			placeholder={"Khoa"}
+            value={text}
+          />
+        </View>
+		<View style={styles.select}>
+          <Text style={styles.title}>Ngành: </Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeText}
+			placeholder={"Chuyên ngành"}
+            value={text}
+          />
+        </View>
+		<View style={styles.select}>
+          <Text style={styles.title}>Lớp: </Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeText}
+			placeholder={"Lớp"}
+            value={text}
+          />
+        </View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Outcome")}
+          style={styles.button}
+        >
+          <Text style={styles.txtBtn}>Xem điểm</Text>
+        </TouchableOpacity>
 
-				<Text style={styles.textInfo}>
-					Họ tên: Trần Hoàng Lâm
-				</Text>
-				<Text style={styles.textInfo}>
-					Mã số sinh viên: 180937
-				</Text>
-				<Text style={styles.textInfo}>
-					Ngày sinh: 24/12/2000
-				</Text>
-				<TouchableOpacity
-					onPress={() => navigation.navigate("Outcome")}
-					style={styles.button}>
-					<Text style={styles.txtBtn}>Xem điểm</Text>
-				</TouchableOpacity>
-			</View>
-		</View>
-	);
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Register")}
+          style={styles.button}
+        >
+          <Text style={styles.txtBtn}>Đăng ký học lại</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
 }
 
 export default HomeScreen;

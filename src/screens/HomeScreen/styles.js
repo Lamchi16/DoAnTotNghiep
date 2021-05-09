@@ -15,13 +15,12 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		paddingHorizontal: 16,
 		paddingVertical: 20,
+		marginTop: 50,
 	},
 	title: {
 		fontWeight: "bold",
-		fontSize: 25,
-	},
-	info: {
 		fontSize: 20,
+		marginTop: 8,
 	},
 	button: {
 		fontWeight: "bold",
@@ -40,5 +39,20 @@ const styles = StyleSheet.create({
 		color: "#fff",
 		fontWeight: "bold",
 	},
+	input: {
+		width: 230,
+		height: 40,
+		backgroundColor: "rgba(0,0,0,.1)",
+		borderRadius: 10,
+		paddingHorizontal: 10,
+		color: "black",
+		fontSize: 18,
+
+	},
+	select: {
+		flexDirection: "row",
+		marginTop: 10,
+	}
+	
 });
 export default styles;

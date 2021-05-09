@@ -1,8 +1,8 @@
 /** @format */
 
 const User = {
-	username: "ltmt2",
-	password: "ltmt2",
+	username: "A",
+	password: "a",
 };
 
 export default User;
