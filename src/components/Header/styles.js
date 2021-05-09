@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
 	logo: {
 		resizeMode: "stretch",
 		width: "100%",
-		height:70,
-		marginTop: 4,
+		height: 60,
+		marginTop: 10,
 	},
 });
 
