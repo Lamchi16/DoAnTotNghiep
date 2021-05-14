@@ -18,8 +18,8 @@ function HomeScreen({ navigation }) {
 	return (
 		<View style={styles.container}>
 			<Header
-				label={"trang chủ"}
-				style={styles.Header}></Header>
+				label='Trang chủ'
+				rightComponent={<Text></Text>}></Header>
 
 			<View style={styles.content}>
 				<Image

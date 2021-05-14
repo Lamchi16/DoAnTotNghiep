@@ -7,9 +7,10 @@ import {
 	StatusBar,
 	Text,
 	TouchableOpacity,
-	Image
+	Image,
 } from "react-native";
 import styles from "./styles";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 function Header({
 	label,
@@ -27,12 +28,16 @@ function Header({
 					<TouchableOpacity
 						onPress={goBack}
 						style={styles.back}>
-						<Text>Back</Text>
+						<Ionicons
+							name='ios-chevron-back'
+							size={40}
+							color='black'
+							style={styles.icon}></Ionicons>
 					</TouchableOpacity>
 				)}
-				<Image
-					source={require("../../images/banner_top1.png")}
-					style={styles.logo}></Image>
+				<Text style={styles.header} numberOfLines={1}>
+					{label}
+				</Text>
 				{rightButton && (
 					<TouchableOpacity
 						onPress={rightButton}
@@ -50,6 +55,5 @@ Header.defaultProps = {
 	goBack: null,
 	rightButton: null,
 };
-
 
 export default Header;

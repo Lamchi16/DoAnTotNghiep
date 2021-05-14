@@ -6,6 +6,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
 import Login from "../screens/Login";
 import Outcome from "../screens/Outcome";
+import Function from "../screens/Functions";
 import StudyAgain from "../screens/StudyAgain";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
@@ -26,11 +27,11 @@ function NavigationApp() {
 					name='BottomTab'
 					component={BottomTab}
 				/>
-				{/* <Stack.Screen name='Outcome' component={Outcome} /> */}
-				{/*<Stack.Screen
+				<Stack.Screen name='Outcome' component={Outcome} />
+				<Stack.Screen
 					name='StudyAgain'
 					component={StudyAgain}
-				/> */}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
@@ -57,7 +58,7 @@ function BottomTab() {
 
 			<Tab.Screen
 				options={{
-					tabBarLabel: "Kết quả học tập",
+					tabBarLabel: "Chức năng",
 					tabBarIcon: ({ color, size }) => (
 						<Entypo
 							name='text-document'
@@ -66,10 +67,10 @@ function BottomTab() {
 						/>
 					),
 				}}
-				name='Outcome'
-				component={Outcome}
+				name='Functions'
+				component={Function}
 			/>
-			<Tab.Screen
+			{/* <Tab.Screen
 				options={{
 					tabBarLabel: "Đăng kí học lại",
 					tabBarIcon: ({ color, size }) => (
@@ -82,7 +83,7 @@ function BottomTab() {
 				}}
 				name='StudyAgain'
 				component={StudyAgain}
-			/>
+			/> */}
 		</Tab.Navigator>
 	);
 }

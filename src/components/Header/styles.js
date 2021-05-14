@@ -13,8 +13,9 @@ const styles = StyleSheet.create({
 	},
 	header: {
 		fontSize: 28,
-		marginHorizontal: 60,
+		alignItems: "center",
 		fontWeight: "bold",
+		justifyContent: "center",
 	},
 	back: {
 		position: "absolute",
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
 	label: {
 		fontSize: 30,
 		fontWeight: "bold",
+		marginHorizontal: 60,
 	},
 	logo: {
 		resizeMode: "stretch",

@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
 	button: {
 		fontWeight: "bold",
 		backgroundColor: "#cd1725",
-		fontSize: 20,
+		fontSize: 100,
 		color: "#000",
-		width: 300,
+		width: 10,
 		height: 50,
 		borderRadius: 7,
 		marginTop: 15,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	txtLogin: {
-		fontSize: 20,
+		fontSize: 100,
 		color: "#fff",
 		fontWeight: "bold",
 	},

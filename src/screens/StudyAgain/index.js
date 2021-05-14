@@ -2,91 +2,82 @@
 
 import React from "react";
 import { Picker } from "@react-native-community/picker";
-
+import useDropdownMenu from "react-accessible-dropdown-menu-hook";
 import {
 	Alert,
 	Text,
+	TextInput,
 	TouchableOpacity,
 	View,
 } from "react-native";
 import { useState } from "react";
 import styles from "../StudyAgain/styles";
 import Header from "../../components/Header";
+import { useNavigation } from "@react-navigation/native";
 
-function StudyAgain(navigation) {
+function StudyAgain() {
 	const [faculty, setFaculty] = useState("");
 	const [job, setJob] = useState("");
 	const [lop, setLop] = useState("");
 	const [subject, setSubject] = useState("");
+	const [type, setType] = useState("");
+	const navigation = useNavigation();
+	const handleRegistry = () => {
+		if (subject === "" || type.trim() === "") {
+			return Alert.alert("Vui lòng chọn đủ thông tin !");
+		}
+
+		return Alert.alert("Đăng kí thành công !");
+	};
 	return (
-		<View>
+		<View style={styles.warper}>
 			<Header
-				label={"trang chủ"}
+				label={"Đăng kí học lại"}
+				goBack={() => navigation.goBack()}
 				style={styles.Header}></Header>
+
 			<View style={styles.container}>
 				<View style={styles.line}>
-					<Text style={{ color: "#000" }}>Khoa</Text>
+					<Text style={styles.textLabel}>Môn: </Text>
+
 					<Picker
 						style={styles.picker}
-						selectedValue={faculty}
-						style={{ height: 50, width: 300 }}
+						selectedValue={subject}
+						style={{ height: 30, width: 300 }}
 						onValueChange={(itemValue, itemIndex) =>
-							setFaculty(itemValue)
+							setSubject(itemValue)
 						}>
-						<Picker.Item label='' value='' />
-						<Picker.Item
-							label='Công nghệ thông tin'
-							value='CNTT'
-						/>
-						<Picker.Item label='Cơ Khí' value='CK' />
-						<Picker.Item label='Java' value='java' />
-						<Picker.Item label='Java' value='java' />
-						<Picker.Item label='Java' value='java' />
+						<Picker.Item label='Chọn Môn' value='' />
+						<Picker.Item label='Lập trình C' value='C' />
+						<Picker.Item label='JAVA' value='JV' />
+
 						<Picker.Item label='JavaScript' value='js' />
 					</Picker>
 				</View>
+				<View style={styles.line}>
+					<Text style={styles.textLabel}>Loại : </Text>
 
-				{/* <Picker
-					style={styles.picker}
-					selectedValue={lop}
-					style={{ height: 50, width: 300 }}
-					onValueChange={(itemValue, itemIndex) =>
-						setLop(itemValue)
-					}>
-					<Picker.Item label='Chọn Lớp' value='' />
-					<Picker.Item
-						label='Lập trình máy tính 1'
-						value='LTMT1'
-					/>
-					<Picker.Item
-						label='Thiết kế đồ hoạ 1'
-						value='TKDH1'
-					/>
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='JavaScript' value='js' />
-				</Picker>
-				<Picker
-					style={styles.picker}
-					selectedValue={subject}
-					style={{ height: 50, width: 300 }}
-					onValueChange={(itemValue, itemIndex) =>
-						setSubject(itemValue)
-					}>
-					<Picker.Item label='Chọn Môn' value='' />
-					<Picker.Item label='Lập trình C' value='C' />
-					<Picker.Item label='JAVA' value='JV' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='Java' value='java' />
-					<Picker.Item label='JavaScript' value='js' />
-				</Picker> */}
-				{/* <TouchableOpacity
+					<Picker
+						style={styles.picker}
+						selectedValue={type}
+						style={{ height: 30, width: 300 }}
+						mode={"dropdown"}
+						onValueChange={(itemValue, itemIndex) =>
+							setType(itemValue)
+						}>
+						<Picker.Item
+							label='Chọn loại học phần'
+							value=''
+						/>
+						<Picker.Item label='Lý thuyết' value='LT' />
+						<Picker.Item label='Thực hành' value='TH' />
+					</Picker>
+				</View>
+				<TouchableOpacity
 					style={styles.button}
-					onPress={() => Alert.alert("Đăng kí thành công")}>
-					<Text>Đăng kí</Text>
-				</TouchableOpacity> */}
+					onPress={handleRegistry}>
+					<Text style={styles.txtLogin}>Đăng kí</Text>
+				</TouchableOpacity>
 			</View>
 		</View>
 	);
