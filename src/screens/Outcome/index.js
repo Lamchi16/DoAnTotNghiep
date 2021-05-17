@@ -1,66 +1,99 @@
 /** @format */
 
 import React from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  SafeAreaView,
+  View,
+  FlatList,
+  StyleSheet,
+  Text,
+  StatusBar,
+} from "react-native";
+import Point from "../../data/Point";
 import Header from "../../components/Header";
-import Login from "../../screens/Login";
+import { useNavigation } from "@react-navigation/native";
+//import Item from "../Outcome/Item"
 
-function Outcome(navigation) {
+function Outcome() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Header style={styles.Header}></Header>
-      {/* <View>
-        <TouchableOpacity
-         onPress={() => navigation.navigate("Login")}
-          style={styles.back}><Text>Thoát</Text>
-        </TouchableOpacity>
-      </View> */}
-	  
-      <View style={styles.title}>
-        <Text style={styles.titlee}>KẾT QUẢ HỌC TẬP</Text>
-		<View style={styles.content}>
-			<Text style={styles.titlee}>BẢNG ĐIỂM LỚP: LTMT2K10</Text>
-			<Text style={styles.titlee}> - SINH VIÊN: LTMT2K10 </Text>
-		</View>
-		
-      </View>
-	  <TouchableOpacity
-          onPress={() => navigation.navigate("Login")}
-          style={styles.button}
-        >
-          <Text style={styles.exit}>Thoát</Text>
-        </TouchableOpacity>
+      <Header
+        label={"Kết quả học tập"}
+        goBack={() => navigation.goBack()}
+        style={styles.Header}
+      ></Header>
+      <FlatList
+        style={styles.list}
+        data={Point}
+        renderItem={({ item }) => {
+          return (
+            <View>
+              <View style={styles.itemFail}>
+                <View
+                  style={{
+                    // flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <View style={{ fontSize: "30" }}>
+                    <Text style={styles.semester}>{item.semester}</Text>
+                  </View>
+
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      fontSize: "10",
+                    }}
+                  >
+                    <Text style={styles.subject}>{item.subject}</Text>
+                    <Text style={styles.point}>{item.point}</Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          );
+        }}
+        keyExtractor={(item) => item.id}
+      />
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-	marginLeft: 6,
   },
-  Header: {
-    fontWeight: "bold",
-    fontSize: 30,
+  list: {
+    marginTop: 20,
   },
-  back: {
-    position: "absolute",
-    left: 15,
+  itemFail: {
+    // backgroundColor: "#f55c47",
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 10,
+    borderColor: "#000",
   },
-  titlee: {
-    marginTop: 15,
-    color: "#cd1725",
-    // marginLeft: 6,
-    fontWeight: "bold",
+  itemPass: {
+    // backgroundColor: "#f6dcbf",
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 10,
+    borderColor: "#000",
   },
-  content: {
-	  flexDirection: "row"
+
+  point: {
+    fontSize: 15,
   },
-  exit: {
-	  color: "#0000cc",
+  subject: { fontSize: 15 },
+  semester: {
 	  fontWeight: "bold",
-
-  }
+	  fontSize: 18,
+	  marginBottom: 5
+}
 });
-
 export default Outcome;

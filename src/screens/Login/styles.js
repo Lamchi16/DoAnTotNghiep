@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
 	logo: {
 		resizeMode: "stretch",
 		width: 300,
-		height: 120,
+		height: 80,
 		marginBottom: 30,
 	},
 	icon: {

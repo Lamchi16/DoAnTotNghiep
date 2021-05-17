@@ -1,50 +1,47 @@
 /** @format */
 
 import { StyleSheet } from "react-native";
-
 const styles = StyleSheet.create({
-	container: {
+	warper: {
 		flex: 1,
 		backgroundColor: "#fff",
 	},
-	Header: {
-		fontWeight: "bold",
-		fontSize: 30,
-	},
-	content: {
-		alignItems: "center",
-		justifyContent: "center",
+	container: {
 		paddingHorizontal: 16,
-		paddingVertical: 20,
+		paddingTop: 20,
+		alignItems: "center",
+
+		/* flexDirection: "row", */
 	},
-	title: {
+	picker: {},
+	line: {
+		flexDirection: "row",
+		paddingVertical: 10,
+	},
+
+	textLabel: {
 		fontWeight: "bold",
-		fontSize: 25,
-	},
-	info: {
+		width: 80,
+		paddingRight: 10,
 		fontSize: 20,
 	},
 	button: {
 		fontWeight: "bold",
-		backgroundColor: "black",
+		backgroundColor: "#cd1725",
 		fontSize: 20,
-		color: "#fff",
+		color: "#000",
 		width: 150,
 		height: 50,
 		borderRadius: 7,
-		marginTop: 30,
+		marginTop: 15,
+
 		alignItems: "center",
 		justifyContent: "center",
 	},
-	txtBtn: {
+	txtLogin: {
 		fontSize: 20,
 		color: "#fff",
 		fontWeight: "bold",
-	},
-	StyleImage: {
-		width: 150,
-		height: 200,
-		marginTop: 20,
 	},
 });
 export default styles;

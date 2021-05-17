@@ -3,12 +3,19 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-
 import HomeScreen from "../screens/HomeScreen";
-// import Option from "../screens/option";
 import Login from "../screens/Login";
 import Outcome from "../screens/Outcome";
+import Function from "../screens/Functions";
+import StudyAgain from "../screens/StudyAgain";
 import Register from "../screens/Register";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+	MaterialCommunityIcons,
+	Entypo,
+	FontAwesome,
+} from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 const Stack = createStackNavigator();
 
 function NavigationApp() {
@@ -17,19 +24,72 @@ function NavigationApp() {
 			<Stack.Navigator
 				screenOptions={{ headerShown: false }}>
 				<Stack.Screen name='Login' component={Login} />
-				{/* <Stack.Screen name='Option' component={Option}/> */}
 				<Stack.Screen
-					name='HomeScreen'
-					component={HomeScreen}
+					name='BottomTab'
+					component={BottomTab}
 				/>
 				<Stack.Screen name='Outcome' component={Outcome} />
-				<Stack.Screen name='Register' component={Register} />
-				{/*<Stack.Screen
+				<Stack.Screen
 					name='StudyAgain'
 					component={StudyAgain}
-				/> */}
+				/>
+				<Stack.Screen
+					name='Register'
+					component={Register}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
+	);
+}
+const Tab = createBottomTabNavigator();
+
+function BottomTab() {
+	return (
+		<Tab.Navigator screenOptions={{ headerShown: false }}>
+			<Tab.Screen
+				options={{
+					tabBarLabel: "Thông tin sinh viên",
+					tabBarIcon: ({ color, size }) => (
+						<AntDesign
+							name='switcher'
+							color={color}
+							size={size}
+						/>
+					),
+				}}
+				name='HomeScreen'
+				component={HomeScreen}
+			/>
+
+			<Tab.Screen
+				options={{
+					tabBarLabel: "Chức năng",
+					tabBarIcon: ({ color, size }) => (
+						<Entypo
+							name='text-document'
+							color={color}
+							size={size}
+						/>
+					),
+				}}
+				name='Functions'
+				component={Function}
+			/>
+			{/* <Tab.Screen
+				options={{
+					tabBarLabel: "Đăng kí học lại",
+					tabBarIcon: ({ color, size }) => (
+						<FontAwesome
+							name='pencil-square-o'
+							color={color}
+							size={size}
+						/>
+					),
+				}}
+				name='StudyAgain'
+				component={StudyAgain}
+			/> */}
+		</Tab.Navigator>
 	);
 }
 

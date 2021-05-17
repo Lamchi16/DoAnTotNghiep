@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import Header from "../../components/Header";
 
-function Outcome(navigation) {
+function Register(navigation) {
   const [name, Name] = React.useState("");
   const [clas, Class] = React.useState("");
   const [card, Card] = React.useState("");
@@ -23,10 +23,13 @@ function Outcome(navigation) {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
-        <Header style={styles.Header}></Header>
-
+      <Header
+        label={"PHIẾU ĐĂNG KÝ HỌC LẠI"}
+        goBack={() => navigation.goBack()}
+        style={styles.Header}
+      ></Header>
         <View style={styles.title}>
-          <Text style={styles.titlee}>PHIẾU ĐĂNG KÝ HỌC LẠI </Text>
+          {/* <Text style={styles.titlee}>PHIẾU ĐĂNG KÝ HỌC LẠI </Text> */}
           <View style={styles.content}>
             <View style={styles.fullname}>
               <Text style={styles.fullnamee}>Họ, tên người nộp tiền: </Text>
@@ -80,11 +83,11 @@ function Outcome(navigation) {
                 value={write}
               />
             </View>
-            <View style={styles.button}>
+            {/* <View style={styles.button}>
               <TouchableOpacity style={styles.buttonn} onPress={() => navigation.navigate("Register")}>
                 <Text style={styles.txtButton}>Đăng ký</Text>
               </TouchableOpacity>
-            </View>
+            </View> */}
           </View>
         </View>
         <View>
@@ -157,4 +160,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Outcome;
+export default Register;
