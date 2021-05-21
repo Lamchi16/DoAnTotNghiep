@@ -1,29 +1,23 @@
-/** @format */
-
 import React from "react";
 import {
-  SafeAreaView,
   View,
-  FlatList,
-  StyleSheet,
   Text,
-  StatusBar,
   TouchableOpacity,
+  StyleSheet,
+  FlatList,
 } from "react-native";
-import Point from "../../data/Point";
-import Header from "../../components/Header";
 import { useNavigation } from "@react-navigation/native";
+import Header from "../../../components/Header";
+import Point from "../../../data/Point";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { Row, Table } from "react-native-table-component";
-//import Item from "../Outcome/Item"
 
-function Outcome() {
+function Semester2() {
   const navigation = useNavigation();
-  const title = ["Môn học", "Đơn vị học trình", "Điểm"];
+
   return (
     <View style={styles.container}>
       <Header
-        label={"Kết quả học tập kỳ 1"}
+        label={"Kết quả học tập kỳ 2"}
         goBack={() => navigation.goBack()}
         style={styles.Header}
       ></Header>
@@ -32,13 +26,6 @@ function Outcome() {
         renderItem={({ item }) => {
           return (
             <View style={styles.itemFail}>
-              {/* <View style={{ flex: 1,padding: 16, paddingTop: 30, backgroundColor: '#fff'}}>
-              <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
-                <Row style={styles.subject} textStyle={styles.text}></Row> 
-                <Row style={styles.subject} textStyle={styles.text}></Row> 
-              </Table>
-              </View> */}
-
               <View
                 style={{
                   // flexDirection: "row",
@@ -84,21 +71,35 @@ function Outcome() {
         style={{
           flexDirection: "row-reverse",
           marginBottom: 10,
-          marginHorizontal: 8,
         }}
       >
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Semester2")}
-          style={styles.back}
-        >
-          <Ionicons
-            name="arrow-forward-circle-outline"
-            size={20}
-            color="black"
-            style={styles.icon}
-          ></Ionicons>
-        </TouchableOpacity>
-        <Text>Học kỳ 2 </Text>
+        <View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Semester3")}
+            style={styles.back}
+          >
+            <Ionicons
+              name="arrow-forward-circle-outline"
+              size={20}
+              color="black"
+              style={styles.icon}
+            ></Ionicons>
+          </TouchableOpacity>
+        </View>
+        {/* <Text>Học kỳ 1...Học kỳ 3</Text> */}
+        <View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Outcome")}
+            style={styles.back}
+          >
+            <Ionicons
+              name="arrow-back-circle-outline"
+              size={20}
+              color="black"
+              style={styles.icon}
+            ></Ionicons>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -108,8 +109,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+
   itemFail: {
-    padding: 10,
+    padding: 20,
     marginVertical: 8,
     marginHorizontal: 6,
     borderRadius: 10,
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
   itemPass: {
     padding: 20,
     marginVertical: 8,
-    marginHorizontal: 6,
+    marginHorizontal: 16,
     borderRadius: 10,
     borderColor: "#000",
   },
@@ -139,6 +141,5 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     marginBottom: 5,
   },
-  text: { margin: 6 },
 });
-export default Outcome;
+export default Semester2;

@@ -9,6 +9,11 @@ import Outcome from "../screens/Outcome";
 import Function from "../screens/Functions";
 import StudyAgain from "../screens/StudyAgain";
 import Register from "../screens/Register";
+import Semester2 from "../screens/Scores/Semester2";
+import Semester3 from "../screens/Scores/Semester3";
+import Semester4 from "../screens/Scores/Semester4";
+import Semester5 from "../screens/Scores/Semester5";
+import Semester6 from "../screens/Scores/Semester6";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
 	MaterialCommunityIcons,
@@ -36,6 +41,26 @@ function NavigationApp() {
 				<Stack.Screen
 					name='Register'
 					component={Register}
+				/>
+				<Stack.Screen
+					name='Semester2'
+					component={Semester2}
+				/>
+				<Stack.Screen
+					name='Semester3'
+					component={Semester3}
+				/>
+				<Stack.Screen
+					name='Semester4'
+					component={Semester4}
+				/>
+				<Stack.Screen
+					name='Semester5'
+					component={Semester5}
+				/>
+				<Stack.Screen
+					name='Semester6'
+					component={Semester6}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

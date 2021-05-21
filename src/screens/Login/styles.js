@@ -22,11 +22,13 @@ const styles = StyleSheet.create({
 	username: {
 		marginBottom: 10,
 	},
-	textlogo: {
-		fontSize: 40,
+
+	content:{
+		textAlign: "center",
+		marginBottom: 10,
+		fontSize: 20,
 		fontWeight: "bold",
-		marginBottom: 50,
-		color: "red",
+		color: "#cd1725",
 	},
 	button: {
 		fontWeight: "bold",
