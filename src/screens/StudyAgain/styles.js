@@ -7,23 +7,23 @@ const styles = StyleSheet.create({
 		backgroundColor: "#fff",
 	},
 	container: {
-		paddingHorizontal: 16,
-		paddingTop: 20,
+		// paddingHorizontal: 16,
+		paddingTop: 10,
 		alignItems: "center",
 
 		/* flexDirection: "row", */
 	},
-	picker: {},
 	line: {
 		flexDirection: "row",
-		paddingVertical: 10,
+		paddingVertical: 30,
 	},
 
 	textLabel: {
 		fontWeight: "bold",
-		width: 80,
-		paddingRight: 10,
-		fontSize: 20,
+		width: 130,
+		paddingRight: 5,
+		fontSize: 17,
+		margin: 5,
 	},
 	button: {
 		fontWeight: "bold",
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		color: "#000",
 		width: 150,
-		height: 50,
+		height: 40,
 		borderRadius: 7,
 		marginTop: 15,
 
@@ -43,5 +43,17 @@ const styles = StyleSheet.create({
 		color: "#fff",
 		fontWeight: "bold",
 	},
+	checkboxContainer: {
+		flexDirection: "row",
+		marginBottom: 20,
+	  },
+	  checkbox: {
+		alignSelf: "center",
+	  },
+	  label: {
+		margin: 8,
+		marginLeft: 40
+		
+	  },
 });
 export default styles;

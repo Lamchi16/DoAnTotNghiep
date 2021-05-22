@@ -67,6 +67,22 @@ function Semester6() {
         }}
         keyExtractor={(item) => item.id}
       />
+
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          marginBottom: 15,
+        }}
+      >
+        <TouchableOpacity
+          onPress={() => navigation.navigate("StudyAgain")}
+          style={styles.button}
+        >
+          <Text style={styles.txtBtn}>Đăng ký học lại</Text>
+        </TouchableOpacity>
+      </View>
+
       <View
         style={{
           flexDirection: "row-reverse",
@@ -138,6 +154,23 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     textDecorationLine: "underline",
     marginBottom: 5,
+  },
+  button: {
+    fontWeight: "bold",
+    backgroundColor: "#cd1725",
+    color: "#fff",
+    width: 150,
+    height: 40,
+    borderRadius: 7,
+    marginTop: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: 140,
+  },
+  txtBtn: {
+    fontSize: 17,
+    color: "#fff",
+    fontWeight: "bold",
   },
 });
 export default Semester6;

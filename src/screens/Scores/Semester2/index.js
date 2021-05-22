@@ -22,6 +22,7 @@ function Semester2() {
         style={styles.Header}
       ></Header>
       <FlatList
+        style={styles.list}
         data={Point}
         renderItem={({ item }) => {
           return (
@@ -67,6 +68,21 @@ function Semester2() {
         }}
         keyExtractor={(item) => item.id}
       />
+
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          marginBottom: 15,
+        }}
+      >
+        <TouchableOpacity
+          onPress={() => navigation.navigate("StudyAgain")}
+          style={styles.button}
+        >
+          <Text style={styles.txtBtn}>Đăng ký học lại</Text>
+        </TouchableOpacity>
+      </View>
       <View
         style={{
           flexDirection: "row-reverse",
@@ -86,7 +102,7 @@ function Semester2() {
             ></Ionicons>
           </TouchableOpacity>
         </View>
-        {/* <Text>Học kỳ 1...Học kỳ 3</Text> */}
+        {/* <Text>Học kỳ 2 ... Học kỳ 4</Text> */}
         <View>
           <TouchableOpacity
             onPress={() => navigation.navigate("Outcome")}
@@ -141,5 +157,22 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     marginBottom: 5,
   },
+  button: {
+    fontWeight: "bold",
+    backgroundColor: "#cd1725",
+    color: "#fff",
+    width: 150,
+    height: 40,
+    borderRadius: 7,
+    marginTop: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: 140
+},
+txtBtn: {
+    fontSize: 17,
+    color: "#fff",
+    fontWeight: "bold",
+},
 });
 export default Semester2;

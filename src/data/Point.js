@@ -23,6 +23,15 @@ const Point = [
 			'Tin học văn phòng: \n',
 			
 		],
+		credits1:[
+			'3\n',
+			'5\n',
+			'2\n',
+			'4\n',
+			'2\n',
+			'2\n',
+			'3\n',
+		],
 		point1:[
 			'9\n',
 			'9.5\n',
@@ -33,6 +42,7 @@ const Point = [
 			'5\n',
 
 		] ,
+
 		practice: "Thực hành",
 		subject2: [
 			'Lập trình căn bản: \n',
@@ -54,7 +64,16 @@ const Point = [
 			'5\n',
 
 		] ,
-		status: "Qua môn",
+		credits2:[
+			'3\n',
+			'5\n',
+			'2\n',
+			'4\n',
+			'2\n',
+			'2\n',
+			'3\n',
+		],
+	
 	},
 	{
 		id: "2",
