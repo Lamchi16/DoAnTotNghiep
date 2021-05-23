@@ -46,8 +46,10 @@ function Semester2() {
                     justifyContent: "space-between",
                   }}
                 >
-                  <Text style={styles.subject}>{item.subject2}</Text>
-                  <Text style={styles.point}>{item.point2}</Text>
+                  <Text style={styles.subject}>{item.subject1}</Text>
+                  <Text style={styles.point}>{item.credits1}</Text>
+                  <Text style={styles.point}>{item.point1}</Text>
+                  
                 </View>
 
                 <View>
@@ -59,8 +61,9 @@ function Semester2() {
                     justifyContent: "space-between",
                   }}
                 >
-                  <Text style={styles.subject}>{item.subject1}</Text>
-                  <Text style={styles.point}>{item.point1}</Text>
+                  <Text style={styles.subject}>{item.subject2}</Text>
+                  <Text style={styles.point}>{item.credits2}</Text>
+                  <Text style={styles.point}>{item.point2}</Text>
                 </View>
               </View>
             </View>

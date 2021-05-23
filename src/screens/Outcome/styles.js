@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 	point: {
 	  fontSize: 15,
 	},
-	subject: { fontSize: 15 },
+	
 	semester: {
 	  fontWeight: "bold",
 	  fontSize: 18,

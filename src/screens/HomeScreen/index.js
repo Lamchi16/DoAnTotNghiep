@@ -15,15 +15,15 @@ import styles from "./styles";
 import Header from "../../components/Header";
 import Point from "../../data/Point";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import {
-  Table,
-  TableWrapper,
-  Row,
-  Rows,
-  Col,
-  Cols,
-  Cell,
-} from "react-native-table-component";
+// import {
+//   Table,
+//   TableWrapper,
+//   Row,
+//   Rows,
+//   Col,
+//   Cols,
+//   Cell,
+// } from "react-native-table-component";
 
 function HomeScreen({ navigation }) {
   return (

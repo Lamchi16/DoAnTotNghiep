@@ -14,6 +14,7 @@ const Point = [
 		semester: "HỌC KỲ 1 ",
 		theory: "Lý thuyết",
 		subject1: [
+			'Môn học \n\n',
 			'Lập trình căn bản: \n',
 			'Anh văn 2: \n',
 			'Cài đặt bảo trì máy tính: \n',
@@ -24,6 +25,7 @@ const Point = [
 			
 		],
 		credits1:[
+			'Đơn vị học phần \n\n',
 			'3\n',
 			'5\n',
 			'2\n',
@@ -33,6 +35,7 @@ const Point = [
 			'3\n',
 		],
 		point1:[
+			'Điểm \n\n',
 			'9\n',
 			'9.5\n',
 			'6\n',
@@ -45,6 +48,7 @@ const Point = [
 
 		practice: "Thực hành",
 		subject2: [
+			'Môn học \n\n',
 			'Lập trình căn bản: \n',
 			'Anh văn 2: \n',
 			'Cài đặt bảo trì máy tính: \n',
@@ -55,6 +59,7 @@ const Point = [
 			
 		],
 		point2:[
+			'Điểm \n\n',
 			'9\n',
 			'9.5\n',
 			'6\n',
@@ -65,6 +70,7 @@ const Point = [
 
 		] ,
 		credits2:[
+			'Đơn vị học phần \n\n',
 			'3\n',
 			'5\n',
 			'2\n',
