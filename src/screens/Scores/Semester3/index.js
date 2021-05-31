@@ -5,159 +5,113 @@ import {
   TouchableOpacity,
   StyleSheet,
   FlatList,
+  ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../../components/Header";
 import Point from "../../../data/Point";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import {
+  Table,
+  TableWrapper,
+  Row,
+  Rows,
+  Col,
+  Cols,
+  Cell,
+} from "react-native-table-component";
 
-function Semester3() {
+function Semester2() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <Header
-        label={"Kết quả học tập kỳ 3"}
+        label={"KẾT QUẢ HỌC TẬP KỲ 3"}
         goBack={() => navigation.goBack()}
+        // rightButton={() => navigation.navigate("Semester2")}
         style={styles.Header}
       ></Header>
-      <FlatList
-        style={styles.list}
-        data={Point}
-        renderItem={({ item }) => {
-          return (
-            <View style={styles.itemFail}>
-              <View
-                style={{
-                  // flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <View style={{ fontSize: "30" }}>
-                  <Text style={styles.semester}>{item.semester}</Text>
-                </View>
-
-                <View>
-                  <Text style={styles.theory}>{item.theory}</Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Text style={styles.subject}>{item.subject2}</Text>
-                  <Text style={styles.point}>{item.point2}</Text>
-                </View>
-
-                <View>
-                  <Text style={styles.theory}>{item.practice}</Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Text style={styles.subject}>{item.subject1}</Text>
-                  <Text style={styles.point}>{item.point1}</Text>
-                </View>
-              </View>
-            </View>
-          );
-        }}
-        keyExtractor={(item) => item.id}
-      />
-
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          marginBottom: 15,
-        }}
-      >
-        <TouchableOpacity
-          onPress={() => navigation.navigate("StudyAgain")}
-          style={styles.button}
-        >
-          <Text style={styles.txtBtn}>Đăng ký học lại</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View
-        style={{
-          flexDirection: "row-reverse",
-          marginBottom: 10,
-        }}
-      >
-        <View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Semester4")}
-            style={styles.back}
+      <View style={styles.wrapper}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Text
+            style={{
+              fontSize: 25,
+              fontWeight: "bold",
+              padding: 10,
+              flex: 0,
+            }}
           >
-            <Ionicons
-              name="arrow-forward-circle-outline"
-              size={20}
-              color="black"
-              style={styles.icon}
-            ></Ionicons>
-          </TouchableOpacity>
-        </View>
-        {/* <Text>Học kỳ 2 ... Học kỳ 4</Text> */}
-        <View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Semester2")}
-            style={styles.back}
+            Lý thuyết
+          </Text>
+          <Table
+            borderStyle={{
+              borderWidth: 1,
+              borderColor: "#000",
+            }}
           >
-            <Ionicons
-              name="arrow-back-circle-outline"
-              size={20}
-              color="black"
-              style={styles.icon}
-            ></Ionicons>
-          </TouchableOpacity>
-        </View>
+            <Row
+              data={Point.Head}
+              style={styles.HeadStyle}
+              textStyle={styles.HeaderText}
+            />
+            <Rows data={Point.Data} textStyle={styles.TableText} />
+          </Table>
+          <Text
+            style={{
+              fontSize: 25,
+              fontWeight: "bold",
+              padding: 10,
+              flex: 0,
+            }}
+          >
+            Thực hành
+          </Text>
+          <Table
+            borderStyle={{
+              borderWidth: 1,
+              borderColor: "#000",
+            }}
+          >
+            <Row
+              data={Point.Head}
+              style={styles.HeadStyle}
+              textStyle={styles.HeaderText}
+            />
+            <Rows data={Point.Data} textStyle={styles.TableText} />
+          </Table>
+
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+              marginTop: 20,
+              paddingTop: 0,
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => navigation.navigate("StudyAgain")}
+              style={styles.button}
+            >
+              <Text style={styles.txtBtn}>Đăng ký học lại</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
   },
-
-  itemFail: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 6,
-    borderRadius: 10,
-    borderColor: "#000",
-    marginTop: 20,
-  },
-  itemPass: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    borderRadius: 10,
-    borderColor: "#000",
+  wrapper: {
+    marginBottom: 80,
+    justifyContent: "center",
+    paddingHorizontal: 8,
   },
 
-  point: {
-    fontSize: 15,
-  },
-  subject: { fontSize: 15 },
-  semester: {
-    fontWeight: "bold",
-    fontSize: 18,
-    marginBottom: 5,
-  },
-  theory: {
-    fontSize: 17,
-    fontWeight: "900",
-    textDecorationLine: "underline",
-    marginBottom: 5,
-  },
   button: {
     fontWeight: "bold",
     backgroundColor: "#cd1725",
@@ -165,15 +119,26 @@ const styles = StyleSheet.create({
     width: 150,
     height: 40,
     borderRadius: 7,
-    marginTop: 30,
+    paddingVertical: 10,
     alignItems: "center",
     justifyContent: "center",
-    marginLeft: 140,
   },
   txtBtn: {
     fontSize: 17,
     color: "#fff",
     fontWeight: "bold",
   },
+  HeadStyle: {
+    height: 50,
+    alignContent: "center",
+    backgroundColor: "#ffe4e1",
+  },
+  TableText: {
+    margin: 10,
+  },
+  HeaderText: {
+    margin: 10,
+    fontWeight: "bold",
+  },
 });
-export default Semester3;
+export default Semester2;

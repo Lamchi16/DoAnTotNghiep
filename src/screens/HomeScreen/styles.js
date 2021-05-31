@@ -12,18 +12,9 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 		color: "#cd1725",
 	},
-	// content: {
-		
-	// 	paddingHorizontal: 16,
-	// 	paddingVertical: 20,
-	// },
-	title: {
-		fontWeight: "bold",
-		fontSize: 25,
-	},
+
 	info: {
-		fontSize: 20,
-		flexDirection: "row"
+		marginTop: 10
 	},
 	button: {
 		fontWeight: "bold",
@@ -35,7 +26,7 @@ const styles = StyleSheet.create({
 		marginTop: 30,
 		alignItems: "center",
 		justifyContent: "center",
-		marginLeft: 140
+		marginLeft: 140,
 	},
 	txtBtn: {
 		fontSize: 20,
@@ -46,7 +37,16 @@ const styles = StyleSheet.create({
 		width: 150,
 		height: 200,
 		marginTop: 20,
-		
+		borderRadius: 10,
+		borderColor: "#fff",
 	},
+	lineInfo: {
+		alignContent: "space-around",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		paddingHorizontal: 30,
+		paddingVertical: 5,
+	},
+	textInfo: { fontSize: 20 },
 });
 export default styles;

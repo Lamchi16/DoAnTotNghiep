@@ -12,18 +12,19 @@ const styles = StyleSheet.create({
 		borderBottomWidth: 1,
 	},
 	header: {
-		fontSize: 28,
+		fontSize: 25,
 		alignItems: "center",
 		fontWeight: "bold",
 		justifyContent: "center",
+		color: "#b22222"
 	},
 	back: {
 		position: "absolute",
-		left: 15,
+		left: 5,
 	},
 	right: {
 		position: "absolute",
-		right: 15,
+		right: 10,
 	},
 	label: {
 		fontSize: 30,

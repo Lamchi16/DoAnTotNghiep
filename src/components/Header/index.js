@@ -30,8 +30,8 @@ function Header({
 						style={styles.back}>
 						<Ionicons
 							name='ios-chevron-back'
-							size={40}
-							color='black'
+							size={35}
+							color= "#b22222"
 							style={styles.icon}></Ionicons>
 					</TouchableOpacity>
 				)}
@@ -42,7 +42,11 @@ function Header({
 					<TouchableOpacity
 						onPress={rightButton}
 						style={styles.right}>
-						<Text>{rightComponent}</Text>
+						<Ionicons
+							name='ios-chevron-forward'
+							size={40}
+							color="#b22222"
+							style={styles.icon}></Ionicons>
 					</TouchableOpacity>
 				)}
 			</View>

@@ -8,19 +8,26 @@ const styles = StyleSheet.create({
 	},
 	container: {
 		// paddingHorizontal: 16,
-		paddingTop: 10,
-		alignItems: "center",
-
-		/* flexDirection: "row", */
+		// paddingTop: 20,
+		// alignItems: "center",
+		// flex: 1,
+		// width: "auto"
+		alignContent: "space-around",
+		justifyContent: "space-between",
+		paddingHorizontal: 15,
+		paddingVertical: 30,
+		marginTop: 5
+		
 	},
 	line: {
 		flexDirection: "row",
-		paddingVertical: 30,
+		alignItems: "center",
+		marginTop: 10
 	},
 
 	textLabel: {
 		fontWeight: "bold",
-		width: 130,
+
 		paddingRight: 5,
 		fontSize: 17,
 		margin: 5,
@@ -34,9 +41,9 @@ const styles = StyleSheet.create({
 		height: 40,
 		borderRadius: 7,
 		marginTop: 15,
-
+		marginBottom: 10,
 		alignItems: "center",
-		justifyContent: "center",
+		 justifyContent: "center",
 	},
 	txtLogin: {
 		fontSize: 20,
@@ -45,15 +52,21 @@ const styles = StyleSheet.create({
 	},
 	checkboxContainer: {
 		flexDirection: "row",
-		marginBottom: 20,
-	  },
-	  checkbox: {
+		// marginBottom: 20,
+	},
+	checkbox: {
 		alignSelf: "center",
-	  },
-	  label: {
+	},
+	label: {
 		margin: 8,
-		marginLeft: 40
+		marginLeft: 40,
+	},
+	input: {
+		color: "black",
+		marginTop: 3, 
+		fontSize: 15
 		
-	  },
+	}
+	
 });
 export default styles;

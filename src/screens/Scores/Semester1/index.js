@@ -26,7 +26,7 @@ function Semester2() {
   return (
     <View style={styles.container}>
       <Header
-        label={"KẾT QUẢ HỌC TẬP KỲ 5"}
+        label={"KẾT QUẢ HỌC TẬP KỲ 1"}
         goBack={() => navigation.goBack()}
         // rightButton={() => navigation.navigate("Semester2")}
         style={styles.Header}

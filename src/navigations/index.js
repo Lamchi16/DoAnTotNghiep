@@ -9,6 +9,7 @@ import Outcome from "../screens/Outcome";
 import Function from "../screens/Functions";
 import StudyAgain from "../screens/StudyAgain";
 import Register from "../screens/Register";
+import Semester1 from "../screens/Scores/Semester1";
 import Semester2 from "../screens/Scores/Semester2";
 import Semester3 from "../screens/Scores/Semester3";
 import Semester4 from "../screens/Scores/Semester4";
@@ -41,6 +42,10 @@ function NavigationApp() {
 				<Stack.Screen
 					name='Register'
 					component={Register}
+				/>
+				<Stack.Screen
+					name='Semester1'
+					component={Semester1}
 				/>
 				<Stack.Screen
 					name='Semester2'
@@ -88,7 +93,7 @@ function BottomTab() {
 
 			<Tab.Screen
 				options={{
-					tabBarLabel: "Chức năng",
+					tabBarLabel: "Kết quả học tập",
 					tabBarIcon: ({ color, size }) => (
 						<Entypo
 							name='text-document'
@@ -97,8 +102,8 @@ function BottomTab() {
 						/>
 					),
 				}}
-				name='Functions'
-				component={Function}
+				name='Outcome'
+				component={Outcome}
 			/>
 			{/* <Tab.Screen
 				options={{
