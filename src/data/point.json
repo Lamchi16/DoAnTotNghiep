@@ -1,0 +1,118 @@
+{
+	"head": [
+		"Môn",
+		"ĐV học trình",
+		"Điểm"
+	],
+	"semester": [
+		{
+			"type": 1,
+			"lythuyet": [
+				["Lập trình căn bản", "2", "6"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			],
+			"thuchanh": [
+				["Lập trình căn bản", "3", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			]
+			
+		},
+		{
+			"type": 2,
+			"lythuyet": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			],
+			"thuchanh": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			]
+			
+		},
+		{
+			"type": 3,
+			"lythuyet": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			],
+			"thuchanh": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			]
+			
+		},
+		{
+			"type": 4,
+			"lythuyet": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			],
+			"thuchanh": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			]
+			
+		},
+		{
+			"type": 5,
+			"lythuyet": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			],
+			"thuchanh": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			]
+			
+		},
+		{
+			"type": 6,
+			"lythuyet": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			],
+			"thuchanh": [
+				["Lập trình căn bản", "2", "5"],
+				["Anh văn 2", "2", "5"],
+				["Cấu trúc máy tính", "5", "5"],
+				["Cơ sở dữ liệu", "5", "5"],
+				["Nhập môn mạng máy tính", "5", "5"]
+			]
+			
+		}
+		
+	]
+}

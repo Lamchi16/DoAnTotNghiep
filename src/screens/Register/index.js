@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Text,
   View,
@@ -11,78 +11,99 @@ import {
   Keyboard,
 } from "react-native";
 import Header from "../../components/Header";
+import student from '../../data/student.json';
+function Register({ navigation, route }) {
+  const { studentcode, dvhp, subjectSelected } = route.params;
+  console.log(route.params);
+  //console.log(subjectSeleted);
+  const [name, setName] = useState("");
+  const [classname, setClassname] = useState("");
+  const [course, setCourse] = useState("");
+  const [faculty, setFaculty] = useState("");
+  const [career, setCareer] = useState("");
+  
+  const [subject, setSubject] = useState("");
+  const [money, setMoney] = useState("");
+  const [write, setWrite] = useState("");
+  useEffect(() => {
+    student.forEach(s => {
+      if (s.studentcode == studentcode) {
+        setName(s.fullname);
+        setClassname(s.class);
+        setCourse(s.course);
+        setFaculty(s.faculty);
+        setCareer(s.career);
+  
 
-function Register(navigation) {
-  const [name, Name] = React.useState("");
-  const [clas, Class] = React.useState("");
-  const [card, Card] = React.useState("");
-  const [subjects, Subjects] = React.useState("");
-  const [money, Money] = React.useState("");
-  const [write, Write] = React.useState("");
+        setSubject(subjectSelected);
+        let _money = 150000 * dvhp;
+        setMoney(_money);
 
+
+      }
+    })
+  }, [])
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
-      <Header
-        label={"PHIẾU ĐĂNG KÝ HỌC LẠI"}
-        goBack={() => navigation.goBack()}
-        style={styles.Header}
-      ></Header>
+        <Header
+          label={"PHIẾU ĐĂNG KÝ HỌC LẠI"}
+          goBack={() => navigation.goBack()}
+          style={styles.Header}
+        ></Header>
         <View style={styles.title}>
           {/* <Text style={styles.titlee}>PHIẾU ĐĂNG KÝ HỌC LẠI </Text> */}
           <View style={styles.content}>
             <View style={styles.fullname}>
-              <Text style={styles.fullnamee}>Họ, tên người nộp tiền: </Text>
-              <TextInput
-                style={styles.input}
-                onChangeText={Name}
-                value={name}
-              />
+              <Text >Họ, tên người nộp tiền: </Text>
+              <Text>{name}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text style={styles.fullnamee}>MSSV: </Text>
-              <TextInput
-                style={styles.input}
-                onChangeText={Card}
-                value={card}
-              />
+              <Text >MSSV: </Text>
+              <Text>{studentcode}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text style={styles.fullnamee}>Lớp: </Text>
-              <TextInput
-                style={styles.input}
-                onChangeText={Class}
-                value={clas}
-              />
+              <Text >Khóa: </Text>
+              <Text>{course}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text style={styles.fullnamee}>Môn: </Text>
-              <TextInput
-                style={styles.input}
-                onChangeText={Subjects}
-                value={subjects}
-              />
+              <Text >Khoa: </Text>
+              <Text>{faculty}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text style={styles.fullnamee}>Số tiền: </Text>
-              <TextInput
-                style={styles.input}
-                onChangeText={Money}
-                value={money}
-              />
+              <Text >Ngành nghề: </Text>
+              <Text>{career}</Text>
+            </View>
+
+            <View style={styles.fullname}>
+              <Text >Lớp: </Text>
+              <Text>{classname}</Text>
+            </View>
+
+            <View style={styles.fullname}>
+              <Text>Môn: </Text>
+              <Text>{subjectSelected ? subjectSelected : null}</Text>
             </View>
             <View style={styles.fullname}>
+              <Text>Số đơn vị học trình: </Text>
+              <Text>{dvhp}</Text>
+            </View>
+            <View style={styles.fullname}>
+              <Text>Số tiền: </Text>
+              <Text>{money}</Text>
+            </View>
+            {/* <View style={styles.fullname}>
               <Text style={styles.fullnamee}>Viết bằng chữ:</Text>
               <TextInput
                 style={styles.input}
                 onChangeText={Write}
                 value={write}
               />
-            </View>
+            </View> */}
             {/* <View style={styles.button}>
               <TouchableOpacity style={styles.buttonn} onPress={() => navigation.navigate("Register")}>
                 <Text style={styles.txtButton}>Đăng ký</Text>
@@ -131,6 +152,7 @@ const styles = StyleSheet.create({
   },
   fullname: {
     flexDirection: "row",
+    marginVertical:10
   },
   fullnamee: {
     marginTop: 10,
@@ -141,19 +163,19 @@ const styles = StyleSheet.create({
     margin: 5,
     marginTop: 9,
   },
-	button: {
-		fontWeight: "bold",
-		backgroundColor: "#cd1725",
-		fontSize: 20,
-		color: "#fff",
-		width: 200,
-		height: 40,
-		borderRadius: 7,
-		marginTop: 30,
-		alignItems: "center",
-		justifyContent: "center",
+  button: {
+    fontWeight: "bold",
+    backgroundColor: "#cd1725",
+    fontSize: 20,
+    color: "#fff",
+    width: 200,
+    height: 40,
+    borderRadius: 7,
+    marginTop: 30,
+    alignItems: "center",
+    justifyContent: "center",
     alignSelf: "center"
-	},
+  },
   txtButton: {
     color: "white",
     fontWeight: "600"

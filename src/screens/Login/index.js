@@ -5,6 +5,7 @@ import styles from "./styles.js";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import User from "../../data/Account";
 import Info from "../../data/Info";
+
 import {
 	Text,
 	TextInput,
@@ -15,27 +16,29 @@ import {
 	Alert,
 	Keyboard,
 } from "react-native";
-
-function Login({ navigation }) {
+import student from '../../data/student.json';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+const Login = ({ navigation }) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-
-	const handleLogin = () => {
+	const handleLogin = async () => {
 		if (username.trim() === "") {
 			return Alert.alert("Tên đăng nhập trống!");
 		}
 		if (password.trim() === "") {
 			return Alert.alert("Mật khẩu trống!");
 		}
-		if (
-			username !== Info.studentcode ||
-			password !== Info.studentcode
-		) {
-			return Alert.alert(
-				"Sai tên đăng nhập hoặc mật khẩu!\nThử lại"
-			);
+		// kiểm tra thông tin username & password
+		const checkLogin = student.filter(i => i.studentcode.includes(username) && i.studentcode.includes(password));
+		if (checkLogin.length === 0) {
+			//thông báo
+			return Alert.alert("Tài khoản hoặc mật khẩu không đúng!");
+		} else {
+			await AsyncStorage.setItem("studentcode",username);
+			navigation.navigate("BottomTab", { studentcode: username });
+
 		}
-		navigation.navigate("BottomTab");
+
 	};
 
 	return (

@@ -7,26 +7,29 @@ import {
   FlatList,
   ScrollView,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+
 import Header from "../../../components/Header";
 import Point from "../../../data/Point";
 import {
   Table,
-  TableWrapper,
   Row,
   Rows,
-  Col,
-  Cols,
   Cell,
+  Col
 } from "react-native-table-component";
 
-function Semester2() {
-  const navigation = useNavigation();
-
+function Semester({navigation,route}) {
+  //lấy điểm
+  const  { point,studentcode } = route.params;
+  const head = [
+		"Môn",
+		"ĐV học trình",
+		"Điểm"
+	];
   return (
     <View style={styles.container}>
       <Header
-        label={"KẾT QUẢ HỌC TẬP KỲ 5"}
+        label={`KẾT QUẢ HỌC TẬP KỲ ${point.type}`}
         goBack={() => navigation.goBack()}
         // rightButton={() => navigation.navigate("Semester2")}
         style={styles.Header}
@@ -50,11 +53,11 @@ function Semester2() {
             }}
           >
             <Row
-              data={Point.Head}
+              data={head}
               style={styles.HeadStyle}
               textStyle={styles.HeaderText}
             />
-            <Rows data={Point.Data} textStyle={styles.TableText} />
+            <Rows data={point.lythuyet} textStyle={styles.TableText} />
           </Table>
           <Text
             style={{
@@ -73,11 +76,11 @@ function Semester2() {
             }}
           >
             <Row
-              data={Point.Head}
+              data={head}
               style={styles.HeadStyle}
               textStyle={styles.HeaderText}
             />
-            <Rows data={Point.Data} textStyle={styles.TableText} />
+            <Rows data={point.thuchanh} textStyle={styles.TableText} />
           </Table>
 
           <View
@@ -89,7 +92,7 @@ function Semester2() {
             }}
           >
             <TouchableOpacity
-              onPress={() => navigation.navigate("StudyAgain")}
+              onPress={() => navigation.navigate("StudyAgain",{data:point,studentcode:studentcode})}
               style={styles.button}
             >
               <Text style={styles.txtBtn}>Đăng ký học lại</Text>
@@ -141,4 +144,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-export default Semester2;
+export default Semester;
