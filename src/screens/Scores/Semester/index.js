@@ -24,7 +24,8 @@ function Semester({navigation,route}) {
   const head = [
 		"Môn",
 		"ĐV học trình",
-		"Điểm"
+		"Điểm", 
+    "Kết quả"
 	];
   return (
     <View style={styles.container}>
@@ -58,6 +59,7 @@ function Semester({navigation,route}) {
               textStyle={styles.HeaderText}
             />
             <Rows data={point.lythuyet} textStyle={styles.TableText} />
+            
           </Table>
           <Text
             style={{
@@ -95,7 +97,7 @@ function Semester({navigation,route}) {
               onPress={() => navigation.navigate("StudyAgain",{data:point,studentcode:studentcode})}
               style={styles.button}
             >
-              <Text style={styles.txtBtn}>Đăng ký học lại</Text>
+              <Text style={styles.txtBtn}>ĐĂNG KÝ HỌC LẠI</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -127,9 +129,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   txtBtn: {
-    fontSize: 17,
+    fontSize: 15,
     color: "#fff",
-    fontWeight: "bold",
+
   },
   HeadStyle: {
     height: 50,

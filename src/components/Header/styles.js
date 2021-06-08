@@ -6,17 +6,15 @@ const styles = StyleSheet.create({
 	container: {
 		height: 50,
 		flexDirection: "row",
-		justifyContent: "center",
 		alignItems: "center",
 		borderBottomColor: "#000",
 		borderBottomWidth: 1,
+		backgroundColor: "#b22222"
 	},
 	header: {
-		fontSize: 25,
-		alignItems: "center",
-		fontWeight: "bold",
-		justifyContent: "center",
-		color: "#b22222"
+		fontSize: 20,
+		// fontWeight: "bold",
+		color: "white",
 	},
 	back: {
 		position: "absolute",

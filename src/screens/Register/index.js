@@ -11,7 +11,7 @@ import {
   Keyboard,
 } from "react-native";
 import Header from "../../components/Header";
-import student from '../../data/student.json';
+import student from "../../data/student.json";
 function Register({ navigation, route }) {
   const { studentcode, dvhp, subjectSelected } = route.params;
   console.log(route.params);
@@ -21,28 +21,25 @@ function Register({ navigation, route }) {
   const [course, setCourse] = useState("");
   const [faculty, setFaculty] = useState("");
   const [career, setCareer] = useState("");
-  
+
   const [subject, setSubject] = useState("");
   const [money, setMoney] = useState("");
   const [write, setWrite] = useState("");
   useEffect(() => {
-    student.forEach(s => {
+    student.forEach((s) => {
       if (s.studentcode == studentcode) {
         setName(s.fullname);
         setClassname(s.class);
         setCourse(s.course);
         setFaculty(s.faculty);
         setCareer(s.career);
-  
 
         setSubject(subjectSelected);
         let _money = 150000 * dvhp;
         setMoney(_money);
-
-
       }
-    })
-  }, [])
+    });
+  }, []);
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
@@ -52,71 +49,92 @@ function Register({ navigation, route }) {
           style={styles.Header}
         ></Header>
         <View style={styles.title}>
-          {/* <Text style={styles.titlee}>PHIẾU ĐĂNG KÝ HỌC LẠI </Text> */}
           <View style={styles.content}>
             <View style={styles.fullname}>
-              <Text >Họ, tên người nộp tiền: </Text>
+              <Text>HỌ TÊN :  </Text>
               <Text>{name}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text >MSSV: </Text>
+              <Text>MSSV:  </Text>
               <Text>{studentcode}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text >Khóa: </Text>
+              <Text>KHÓA: </Text>
               <Text>{course}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text >Khoa: </Text>
+              <Text>KHOA:  </Text>
               <Text>{faculty}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text >Ngành nghề: </Text>
+              <Text>NGÀNH NGHỀ:  </Text>
               <Text>{career}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text >Lớp: </Text>
+              <Text>LỚP:  </Text>
               <Text>{classname}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text>Môn: </Text>
+              <Text>MÔN:  </Text>
               <Text>{subjectSelected ? subjectSelected : null}</Text>
             </View>
             <View style={styles.fullname}>
-              <Text>Số đơn vị học trình: </Text>
+              <Text>TỔNG SỐ ĐVHP:  </Text>
               <Text>{dvhp}</Text>
             </View>
             <View style={styles.fullname}>
-              <Text>Số tiền: </Text>
-              <Text>{money}</Text>
+              <Text>SỐ TIỀN:  </Text>
+              <Text>{money} VNĐ</Text>
             </View>
-            {/* <View style={styles.fullname}>
-              <Text style={styles.fullnamee}>Viết bằng chữ:</Text>
-              <TextInput
-                style={styles.input}
-                onChangeText={Write}
-                value={write}
-              />
-            </View> */}
-            {/* <View style={styles.button}>
-              <TouchableOpacity style={styles.buttonn} onPress={() => navigation.navigate("Register")}>
-                <Text style={styles.txtButton}>Đăng ký</Text>
-              </TouchableOpacity>
-            </View> */}
+
+            <View
+              style={{
+                flexDirection: "row",
+                alignContent: "space-around",
+                justifyContent: "space-between",
+                marginHorizontal: 15,
+              }}
+            >
+              <View style={styles.button}>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("StudyAgain")}
+                >
+                  <Text style={styles.txtButton}>
+                    ĐĂNG KÝ MÔN HỌC TIẾP THEO
+                  </Text>
+                </TouchableOpacity>
+              </View>
+
+              <View
+                style={{
+                  fontWeight: "bold",
+                  backgroundColor: "#cd1725",
+                  color: "#fff",
+                  width: 130,
+                  height: 40,
+                  borderRadius: 7,
+                  marginTop: 100,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexDirection: "row",
+                }}
+              >
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("HomeScreen")}
+                >
+                  <Text style={styles.txtButton}>THOÁT</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
         </View>
-        <View>
-          {/* <TouchableOpacity
-         onPress={() => navigation.navigate("Login")}
-          style={styles.back}><Text>Thoát</Text>
-        </TouchableOpacity> */}
-        </View>
+        <View></View>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -152,7 +170,7 @@ const styles = StyleSheet.create({
   },
   fullname: {
     flexDirection: "row",
-    marginVertical:10
+    marginVertical: 10,
   },
   fullnamee: {
     marginTop: 10,
@@ -166,20 +184,20 @@ const styles = StyleSheet.create({
   button: {
     fontWeight: "bold",
     backgroundColor: "#cd1725",
-    fontSize: 20,
     color: "#fff",
-    width: 200,
+    width: 220,
     height: 40,
     borderRadius: 7,
-    marginTop: 30,
+    marginTop: 100,
     alignItems: "center",
     justifyContent: "center",
-    alignSelf: "center"
+    flexDirection: "row",
   },
   txtButton: {
     color: "white",
-    fontWeight: "600"
-  }
+    fontWeight: "600",
+    fontSize: 13
+  },
 });
 
 export default Register;

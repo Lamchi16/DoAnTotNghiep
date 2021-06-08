@@ -44,9 +44,10 @@ const styles = StyleSheet.create({
 		alignContent: "space-around",
 		flexDirection: "row",
 		justifyContent: "space-between",
-		paddingHorizontal: 30,
+		paddingHorizontal: 16,
 		paddingVertical: 5,
 	},
-	textInfo: { fontSize: 20 },
+	textContent: { fontSize: 13 },
+	textInfo: { fontSize: 15 },
 });
 export default styles;

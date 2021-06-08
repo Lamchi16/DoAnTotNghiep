@@ -27,9 +27,8 @@ const styles = StyleSheet.create({
 
 	textLabel: {
 		fontWeight: "bold",
-
 		paddingRight: 5,
-		fontSize: 17,
+		fontSize: 13,
 		margin: 5,
 	},
 	button: {

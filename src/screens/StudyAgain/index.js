@@ -63,29 +63,47 @@ const StudyAgain = ({ navigation, route }) => {
     }
   };
 
+  // 	const handleRegistry = () => {
+  // 	if (subject.trim() === "" || theory.trim() === "" || practice.trim() === "" ||  number.trim() === "" ) {
+  // 		return Alert.alert("Vui lòng chọn đủ thông tin !");
+  // 	}
+  // 	{
+  // 		navigation.navigate("Register");
+  // 		return Alert.alert("Đăng kí thành công !");
+  // 	}
+  // };
+
   return (
     <View
       style={{
         flex: 1,
-		backgroundColor: "white"
-
+        backgroundColor: "white",
       }}
     >
       <Header
-        label={`Đăng ký học lại kỳ ${data.type}`}
+        label={`ĐĂNG KÝ HỌC LẠI HỌC KỲ ${data.type}`}
         goBack={() => navigation.goBack()}
         style={styles.Header}
       ></Header>
       <View
         style={{
           marginTop: 20,
-          marginHorizontal: 20,
-		 
+          marginHorizontal: 10,
         }}
       >
         <View>
           <View style={{ flexDirection: "row", marginVertical: 10 }}>
-            <Text style={styles.textLabel}>Chọn môn:</Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                paddingRight: 5,
+                fontSize: 13,
+                margin: 5,
+                marginTop: 12
+              }}
+            >
+              CHỌN MÔN:
+            </Text>
             <Picker
               selectedValue={subjectSelected}
               style={{ height: 40, width: 300 }}
@@ -99,13 +117,13 @@ const StudyAgain = ({ navigation, route }) => {
               ))}
             </Picker>
           </View>
-          <Text style={styles.textLabel}>Chọn học phần:</Text>
 
           <View
             style={{
               flexDirection: "row",
             }}
           >
+            <Text style={styles.textLabel}>CHỌN HỌC PHẦN:</Text>
             <View style={{ flexDirection: "row" }}>
               <Text style={styles.label}>Lý thuyết</Text>
 
@@ -137,20 +155,45 @@ const StudyAgain = ({ navigation, route }) => {
               alignSelf: "center",
             }}
           >
-            <Text style={{ color: "red", textAlign: "center", borderColor: "red", }}>
+            <Text
+              style={{ color: "red", textAlign: "center", borderColor: "red" }}
+            >
               Xem tổng tiền đăng ký
             </Text>
           </TouchableOpacity>
-          <View>
-            <Text style={styles.textLabel}>Số đơn vị học phần: {dvhp}</Text>
+          <View style={{ marginVertical: 5 }}>
+            <Text style={styles.textLabel}>
+              SỐ ĐVHP LÝ THUYẾT: {dvhp}
+            </Text>
           </View>
-          <View style={{ marginVertical: 10 }}>
-            <Text style={styles.textLabel}>Giá tiền/ĐVHP: 150.000 VNĐ</Text>
+
+          <View style={{ marginVertical: 5 }}>
+            <Text style={styles.textLabel}>
+              SỐ ĐVHP THỰC HÀNH: {dvhp}
+            </Text>
           </View>
-          <View style={{ marginVertical: 10 }}>
-            <Text style={styles.textLabel}>Tổng tiền: {dvhp * 150000} VNĐ</Text>
+
+          <View style={{ marginVertical: 5 }}>
+            <Text style={styles.textLabel}>ĐƠN GIÁ 1 ĐVHP LÝ THUYẾT : 150.000 VNĐ</Text>
           </View>
-          <View style={{ marginVertical: 10 }}>
+
+          <View style={{ marginVertical: 5 }}>
+            <Text style={styles.textLabel}>ĐƠN GIÁ 1 ĐVHP THỰC HÀNH: 200.000 VNĐ</Text>
+          </View>
+
+          <View style={{ marginVertical: 5}}>
+            <Text style={styles.textLabel}>GIÁ TIỀN LÝ THUYẾT: {dvhp * 150000} VNĐ</Text>
+          </View>
+
+          <View style={{ marginVertical: 5 }}>
+            <Text style={styles.textLabel}>GIÁ TIỀN THỰC HÀNH: {dvhp * 200000} VNĐ</Text>
+          </View>
+
+          <View style={{ marginVertical: 5 }}>
+            <Text style={styles.textLabel}>TỔNG TIỀN: {(dvhp * 150000) + (dvhp * 200000)} VNĐ</Text>
+          </View>
+
+          <View style={{ marginVertical: 5 }}>
             <TouchableOpacity
               onPress={() =>
                 navigation.navigate("Register", {
@@ -161,16 +204,16 @@ const StudyAgain = ({ navigation, route }) => {
               }
               style={{
                 alignSelf: "center",
-                width: 200,
-                backgroundColor: "red",
+                width: 150,
+                backgroundColor: "#cd1725",
                 paddingHorizontal: 10,
                 paddingVertical: 5,
                 borderRadius: 5,
+                marginTop: 50
               }}
             >
               <Text style={{ textAlign: "center", color: "white" }}>
-                {" "}
-                ĐĂNG KÝ{" "}
+                ĐĂNG KÝ
               </Text>
             </TouchableOpacity>
           </View>

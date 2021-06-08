@@ -21,13 +21,11 @@ const styles = StyleSheet.create({
     height: 45,
     borderRadius: 7,
     paddingVertical: 10,
-    //  alignItems: "center",
     justifyContent: "center",
   },
   txtBtn: {
-    fontSize: 25,
-    color: "#b22222",
-    fontWeight: "bold",
+    fontSize: 20,
+    color: "black",
     marginLeft: 6
   },
 
