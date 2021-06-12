@@ -13,7 +13,7 @@ import {
 import Header from "../../components/Header";
 import student from "../../data/student.json";
 function Register({ navigation, route }) {
-  const { studentcode, dvhp, subjectSelected } = route.params;
+  const { studentcode, dvhp, subjectSelected, money } = route.params;
   console.log(route.params);
   //console.log(subjectSeleted);
   const [name, setName] = useState("");
@@ -23,7 +23,6 @@ function Register({ navigation, route }) {
   const [career, setCareer] = useState("");
 
   const [subject, setSubject] = useState("");
-  const [money, setMoney] = useState("");
   const [write, setWrite] = useState("");
   useEffect(() => {
     student.forEach((s) => {
@@ -33,10 +32,7 @@ function Register({ navigation, route }) {
         setCourse(s.course);
         setFaculty(s.faculty);
         setCareer(s.career);
-
-        setSubject(subjectSelected);
-        let _money = 150000 * dvhp;
-        setMoney(_money);
+        setSubject(subjectSelected)
       }
     });
   }, []);
@@ -90,7 +86,7 @@ function Register({ navigation, route }) {
             </View>
             <View style={styles.fullname}>
               <Text>SỐ TIỀN:  </Text>
-              <Text>{money} VNĐ</Text>
+              <Text>{money? money.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') : 0} VNĐ</Text>
             </View>
 
             <View

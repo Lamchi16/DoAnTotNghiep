@@ -21,7 +21,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const Login = ({ navigation }) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-	const handleLogin = async () => {
+	const handleLogin = () => {
 		if (username.trim() === "") {
 			return Alert.alert("Tên đăng nhập trống!");
 		}
@@ -34,7 +34,6 @@ const Login = ({ navigation }) => {
 			//thông báo
 			return Alert.alert("Tài khoản hoặc mật khẩu không đúng!");
 		} else {
-			await AsyncStorage.setItem("studentcode",username);
 			navigation.navigate("BottomTab", { studentcode: username });
 
 		}
