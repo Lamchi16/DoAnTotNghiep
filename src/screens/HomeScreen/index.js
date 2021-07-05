@@ -14,18 +14,6 @@ import {
 } from "react-native";
 import styles from "./styles";
 import Header from "../../components/Header";
-import Point from "../../data/Point";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import {
-  Table,
-  TableWrapper,
-  Row,
-  Rows,
-  Col,
-  Cols,
-  Cell,
-} from "react-native-table-component";
-import Info from "../../data/Info";
 
 import student from '../../data/student.json';
 
@@ -100,10 +88,10 @@ function HomeScreen({navigation,route}) {
                   paddingBottom: 10,
                 }}
               >
-                <Image
+                {/* <Image
                   style={styles.StyleImage}
                   source={require("../../images/image1.png")}
-                />
+                /> */}
               </View>
 
               <View style={styles.info}>

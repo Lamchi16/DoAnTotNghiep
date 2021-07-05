@@ -32,10 +32,12 @@ function Register({ navigation, route }) {
         setCourse(s.course);
         setFaculty(s.faculty);
         setCareer(s.career);
-        setSubject(subjectSelected)
+        setSubject(subjectSelected);
       }
     });
   }, []);
+  
+  
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
@@ -47,12 +49,12 @@ function Register({ navigation, route }) {
         <View style={styles.title}>
           <View style={styles.content}>
             <View style={styles.fullname}>
-              <Text>HỌ TÊN :  </Text>
+              <Text>HỌ TÊN : </Text>
               <Text>{name}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text>MSSV:  </Text>
+              <Text>MSSV: </Text>
               <Text>{studentcode}</Text>
             </View>
 
@@ -62,31 +64,36 @@ function Register({ navigation, route }) {
             </View>
 
             <View style={styles.fullname}>
-              <Text>KHOA:  </Text>
+              <Text>KHOA: </Text>
               <Text>{faculty}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text>NGÀNH NGHỀ:  </Text>
+              <Text>NGÀNH NGHỀ: </Text>
               <Text>{career}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text>LỚP:  </Text>
+              <Text>LỚP: </Text>
               <Text>{classname}</Text>
             </View>
 
             <View style={styles.fullname}>
-              <Text>MÔN:  </Text>
+              <Text>MÔN: </Text>
               <Text>{subjectSelected ? subjectSelected : null}</Text>
             </View>
             <View style={styles.fullname}>
-              <Text>TỔNG SỐ ĐVHP:  </Text>
+              <Text>TỔNG SỐ ĐVHP: </Text>
               <Text>{dvhp}</Text>
             </View>
             <View style={styles.fullname}>
-              <Text>SỐ TIỀN:  </Text>
-              <Text>{money? money.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') : 0} VNĐ</Text>
+              <Text>SỐ TIỀN: </Text>
+              <Text>
+                {money
+                  ? money.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+                  : 0}{" "}
+                VNĐ
+              </Text>
             </View>
 
             <View
@@ -112,7 +119,7 @@ function Register({ navigation, route }) {
                   fontWeight: "bold",
                   backgroundColor: "#cd1725",
                   color: "#fff",
-                  width: 130,
+                  width: 150,
                   height: 40,
                   borderRadius: 7,
                   marginTop: 100,
@@ -122,9 +129,34 @@ function Register({ navigation, route }) {
                 }}
               >
                 <TouchableOpacity
+                  onPress={() => navigation.navigate("Schedule")}
+                >
+                  <Text style={styles.txtButton}>GỬI PHIẾU ĐĂNG KÝ</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            <View>
+              <View
+                style={{
+                  fontWeight: "bold",
+                  backgroundColor: "white",
+                  width: 150,
+                  height: 40,
+                  borderRadius: 7,
+                  marginTop: 30,
+                  alignItems: "center",
+                  alignSelf: 'center',
+                }}
+              >
+                <TouchableOpacity
                   onPress={() => navigation.navigate("HomeScreen")}
                 >
-                  <Text style={styles.txtButton}>THOÁT</Text>
+                  <Text
+                    style={{ color: "black", fontWeight: "600", fontSize: 13, textDecorationLine: "underline" }}
+                  >
+                          THOÁT     
+                  </Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -139,7 +171,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    marginLeft: 6,
+ 
   },
   Header: {
     fontWeight: "bold",
@@ -192,7 +224,7 @@ const styles = StyleSheet.create({
   txtButton: {
     color: "white",
     fontWeight: "600",
-    fontSize: 13
+    fontSize: 13,
   },
 });
 

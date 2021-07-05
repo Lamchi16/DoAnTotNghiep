@@ -22,7 +22,7 @@ function Header({ label, goBack, rightButton, rightComponent }) {
             <Ionicons
               name="ios-chevron-back"
               size={25}
-              color="white"
+              color="#b22222"
               style={styles.icon}
             ></Ionicons>
           </TouchableOpacity>

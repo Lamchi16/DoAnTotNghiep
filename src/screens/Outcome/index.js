@@ -30,11 +30,12 @@ const Outcome = (props) => {
         style={styles.Header}
       ></Header>
       <View style={styles.wrapper}>
-        {point.semester.map((se) => (
+       
+        {point.semester.map((se) => (   
           <View
             key={se.type}
             style={{
-              marginVertical: 10,
+             marginTop: 30
             }}
           >
             <TouchableOpacity
@@ -48,6 +49,7 @@ const Outcome = (props) => {
             </TouchableOpacity>  
           </View>
         ))}
+        
       </View>
 
     </View>

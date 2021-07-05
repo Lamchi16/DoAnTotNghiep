@@ -9,109 +9,99 @@
 		{
 			"type": 1,
 			"lythuyet": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
+				["MH01","Toán cao cấp", "2", "6", "Đạt"],
+				["MH02","Chính trị", "2", "3", "Không đạt"],
+				["MH03","Tin học căn bản", "5", "6", "Đạt"],
+				["MH04","Pháp Luật", "5", "2", "Không đạt"],
+				["MH05","Anh văn 1", "5", "9", "Đạt"]
 			],
 			"thuchanh": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
+				["MH03","Tin học căn bản", "2", "3", "Không đạt"]
 			]
 			
 		},
 		{
 			"type": 2,
 			"lythuyet": [
-				["Chính trị", "2", "6", "Đạt"],
-				["Toán cao cấp", "2", "3", "Không đạt"],
-				["Photoshop", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Lập trình android", "5", "9", "Đạt"]
+				["MH06","Lập trình căn bản", "2", "6", "Đạt"],
+				["MH07","Anh văn 2", "2", "3", "Không đạt"],
+				["MH08","Nhập môn mạng máy tính", "5", "6", "Đạt"],
+				["MH09","Tin học văn phòng", "5", "2", "Không đạt"],
+				["MH10","Xử lý ảnh", "5", "9", "Đạt"],
+				["MH11","Cấu trúc máy tính", "5", "6", "Đạt"],
+				["MH12","Cài đặt và bảo trì máy tính", "5", "2", "Không đạt"],
+				["MH13","Cơ sở dữ liệu", "5", "9", "Đạt"]
 			],
 			"thuchanh": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
+				["MH06","Lập trình căn bản", "2", "6", "Đạt"],
+				["MH08","Nhập môn mạng máy tính", "5", "6", "Đạt"],
+				["MH09","Tin học văn phòng", "5", "2", "Không đạt"],
+				["MH10","Xử lý ảnh", "5", "9", "Đạt"],
+				["MH11","Cấu trúc máy tính", "5", "6", "Đạt"],
+				["MH12","Cài đặt và bảo trì máy tính", "5", "2", "Không đạt"],
+				["MH13","Cơ sở dữ liệu", "5", "9", "Đạt"]
 			]
 			
 		},
 		{
 			"type": 3,
 			"lythuyet": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
+				["MH14","Cấu trúc dữ liệu giải thuật", "2", "6", "Đạt"],
+				["MH15","Kỹ thuật lập trình", "2", "3", "Không đạt"],
+				["MH16","Hệ QTCSDL M_Access", "5", "6", "Đạt"],
+				["MH17","Anh văn chuyên ngành 1", "5", "2", "Không đạt"],
+				["MH18","Lập trình hướng đối tượng", "5", "9", "Đạt"],
+				["MH19","Lập trình C#", "5", "6", "Đạt"]
+				
 			],
 			"thuchanh": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
+				["MH14","Cấu trúc dữ liệu giải thuật", "2", "6", "Đạt"],
+				["MH15","Kỹ thuật lập trình", "2", "3", "Không đạt"],
+				["MH16","Hệ QTCSDL M_Access", "5", "6", "Đạt"],
+				["MH18","Lập trình hướng đối tượng", "5", "9", "Đạt"],
+				["MH19","Lập trình C#", "5", "6", "Đạt"]
 			]
 			
 		},
 		{
 			"type": 4,
 			"lythuyet": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
+				["MH20","Thiế kế web", "2", "6", "Đạt"],
+				["MH21","Anh văn chuyên ngành 2", "2", "3", "Không đạt"],
+				["MH22","Hệ QTCSDL SQL Server", "5", "6", "Đạt"],
+				["MH23","Phân tích thiết kế hệ thống", "5", "2", "Không đạt"],
+				["MH24","HĐH Linux", "5", "9", "Đạt"],
+				["MH25","Lập trình Service", "5", "6", "Đạt"]
 			],
 			"thuchanh": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
+				["MH20","Thiế kế web", "2", "6", "Đạt"],
+				["MH22","Hệ QTCSDL SQL Server", "5", "6", "Đạt"],
+				["MH24","HĐH Linux", "5", "9", "Đạt"],
+				["MH25","Lập trình Service", "5", "6", "Đạt"]
 			]
 			
 		},
 		{
 			"type": 5,
 			"lythuyet": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
+				["MH26","Xây dự phần mềm quản lý", "2", "6", "Đạt"],
+				["MH27","Kỹ năng mềm", "2", "3", "Không đạt"],
+				["MH28","Lập trình PHP.Net", "5", "6", "Đạt"],
+				["MH29","Lập trình thiết bị di động", "5", "2", "Không đạt"],
+				["MH30","Lập trình Linux", "5", "9", "Đạt"],
+				["MH31","Lập trình XML", "5", "6", "Đạt"]
 			],
 			"thuchanh": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
+				["MH26","Xây dự phần mềm quản lý", "2", "6", "Đạt"],
+				["MH28","Lập trình PHP.Net", "5", "6", "Đạt"],
+				["MH29","Lập trình thiết bị di động", "5", "2", "Không đạt"],
+				["MH30","Lập trình Linux", "5", "9", "Đạt"],
+				["MH31","Lập trình XML", "5", "6", "Đạt"]
 			]
 			
 		},
 		{
-			"type": 6,
-			"lythuyet": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
-			],
-			"thuchanh": [
-				["Lập trình căn bản", "2", "6", "Đạt"],
-				["Anh văn 2", "2", "3", "Không đạt"],
-				["Cấu trúc máy tính", "5", "6", "Đạt"],
-				["Cơ sở dữ liệu", "5", "2", "Không đạt"],
-				["Nhập môn mạng máy tính", "5", "9", "Đạt"]
-			]
+			"type": 6	
 			
 		}
 		

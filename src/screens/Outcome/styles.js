@@ -14,19 +14,17 @@ const styles = StyleSheet.create({
   },
 
   button: {
-  
-    fontWeight: "bold",
-    backgroundColor: "#fffafa",
+    backgroundColor: "#b22222",
     width: "auto",
-    height: 45,
-    borderRadius: 7,
-    paddingVertical: 10,
-    justifyContent: "center",
+    height: 50,
+    borderRadius: 20,
+   justifyContent: "center"
+    
   },
   txtBtn: {
     fontSize: 20,
-    color: "black",
-    marginLeft: 6
+    color: "white",
+    textAlign: "center"
   },
 
   component: {

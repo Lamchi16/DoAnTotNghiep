@@ -9,7 +9,6 @@ import {
 } from "react-native";
 
 import Header from "../../../components/Header";
-import Point from "../../../data/Point";
 import {
   Table,
   Row,
@@ -22,8 +21,9 @@ function Semester({navigation,route}) {
   //lấy điểm
   const  { point,studentcode } = route.params;
   const head = [
+    "Mã môn",
 		"Môn",
-		"ĐV học trình",
+		"ĐV học phần",
 		"Điểm", 
     "Kết quả"
 	];
@@ -84,6 +84,7 @@ function Semester({navigation,route}) {
             />
             <Rows data={point.thuchanh} textStyle={styles.TableText} />
           </Table>
+          <Text style={{marginTop: 10, color: "red"}}> NOTE: Môn học lại của kỳ lẻ sẽ được đăng ký và học lại ở kỳ chẵn và ngược lại </Text>
 
           <View
             style={{

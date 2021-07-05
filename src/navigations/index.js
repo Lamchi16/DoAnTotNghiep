@@ -5,11 +5,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
 import Login from "../screens/Login";
+//import SignUp from "../screens/SignUp";
 import Outcome from "../screens/Outcome";
 import Function from "../screens/Functions";
 import StudyAgain from "../screens/StudyAgain";
 import Register from "../screens/Register";
 import Semester from "../screens/Scores/Semester";
+import Schedule from "../screens/Schedule";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
@@ -33,6 +35,8 @@ function NavigationApp() {
 					name='BottomTab'
 					component={BottomTab}
 				/>
+				{/* <Stack.Screen name='SignUp' component={SignUp} /> */}
+	
 				<Stack.Screen name='Outcome' component={Outcome} />
 				<Stack.Screen
 					name='StudyAgain'
@@ -45,6 +49,10 @@ function NavigationApp() {
 				<Stack.Screen
 					name='Semester'
 					component={Semester}
+				/>
+				<Stack.Screen
+					name='Schedule'
+					component={Schedule}
 				/>
 				
 			</Stack.Navigator>
@@ -88,20 +96,7 @@ function BottomTab({route,navigation}) {
 				component={Outcome}
 				initialParams={{studentcode:studentcode}}
 			/>
-			{/* <Tab.Screen
-				options={{
-					tabBarLabel: "Đăng kí học lại",
-					tabBarIcon: ({ color, size }) => (
-						<FontAwesome
-							name='pencil-square-o'
-							color={color}
-							size={size}
-						/>
-					),
-				}}
-				name='StudyAgain'
-				component={StudyAgain}
-			/> */}
+		
 		</Tab.Navigator>
 	);
 }

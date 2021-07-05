@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { Picker } from "@react-native-community/picker";
-import useDropdownMenu from "react-accessible-dropdown-menu-hook";
 import {
   Alert,
   Text,
@@ -12,7 +11,6 @@ import {
   CheckBox,
   ActivityIndicator,
 } from "react-native";
-
 import styles from "../StudyAgain/styles";
 import Header from "../../components/Header";
 import SelectMultiple from 'react-native-select-multiple'
@@ -24,34 +22,36 @@ const StudyAgain = ({ navigation, route }) => {
   useEffect(() => {
     let _subjectLythuyet = [];
     let _subjectThuchanh = [];
+
     //them mon ly thuyet
-    console.log(data);
-    console.log(data.lythuyet);
     data.lythuyet.map((e) => {
       {
         _subjectLythuyet.push({
-          name: e[0],
-          lythuyet: e[1]
+          name: e[1],
+          lythuyet: e[2]
         });
       }
     });
+    //console.log(data.lythuyet);
+
     //them mon thuc hanh
+ //console.log(data.thuchanh);
     data.thuchanh.map((e) => {
       {
         _subjectThuchanh.push({
-          name: e[0],
-          thuchanh: e[1]
+          name: e[1],
+          thuchanh: e[2]
         })
       }
     })
-    
-    
+  //console.log(_subjectThuchanh);
+
     //  merge two array
     const map = new Map();
     _subjectLythuyet.forEach(item => map.set(item.name, item));
     _subjectThuchanh.forEach(item => map.set(item.name, { ...map.get(item.name), ...item }));
     const mergedArr = Array.from(map.values());
-    console.log(mergedArr);
+    //console.log(mergedArr);
   
     setSubject(mergedArr);
     showTotal();
@@ -61,7 +61,7 @@ const StudyAgain = ({ navigation, route }) => {
   const [position, setPosition] = useState(null);
   const [subject, setSubject] = useState([]);
   const [subjectSelected, setSubjectSelected] = useState("");
-  const [dvhp, setDvhp] = useState(0);
+  const [dvhp, setDvhp] = useState(0);  
   const [dvhplt, setDvhplt] = useState(0);
   const [dvhpth, setDvhpth] = useState(0);
   const showTotal = (selectedType) => {
@@ -70,7 +70,7 @@ const StudyAgain = ({ navigation, route }) => {
     setDvhpth(0);
 
     let type_array = []
-    console.log(selectedType);
+   // console.log(selectedType);
     if (selectedType) {
       selectedType.map(type => {
         type_array.push(type.value);

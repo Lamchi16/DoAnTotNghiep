@@ -42,9 +42,8 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "center",
 	},
-	buttonSignUp: {
+	buttonExit: {
 		fontWeight: "bold",
-		//backgroundColor: "#cd1725",
 		fontSize: 20,
 		width: 300,
 		height: 50,
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
 		top: 10,
 		left: 10,
 	},
-	textSignUp: {
+	txtExit: {
 		color: "blue",
 		textDecorationLine: "underline",
 		fontSize: 20,

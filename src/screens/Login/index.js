@@ -35,6 +35,7 @@ const Login = ({ navigation }) => {
 			return Alert.alert("Tài khoản hoặc mật khẩu không đúng!");
 		} else {
 			navigation.navigate("BottomTab", { studentcode: username });
+			return Alert.alert("Đăng nhập thành công!");
 
 		}
 
@@ -63,6 +64,7 @@ const Login = ({ navigation }) => {
 						<TextInput
 							style={styles.textinput}
 							placeholder='Tài khoản'
+							keyboardType="email-address"
 							onChangeText={(text) =>
 								setUsername(text)
 							}></TextInput>
@@ -90,16 +92,14 @@ const Login = ({ navigation }) => {
 						<Text style={styles.txtLogin}>Đăng nhập</Text>
 					</TouchableOpacity>
 				</View>
-				{/* <View style={styles.view}>
-					<Text style={styles.TextSignUp}>
-						Haven't account ?
-					</Text>
-					<Text
-						style={styles.TextSignUp}
-						onPress={() => navigation.navigate("Register")}>
-						Sign up
-					</Text>
-				</View> */}
+
+				<View>
+					<TouchableOpacity
+						style={styles.buttonSignUp}
+						onPress={() =>navigation.navigate("SignUp")}>
+						<Text style={styles.textSignUp}>Đăng ký</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
 		</TouchableWithoutFeedback>
 	);

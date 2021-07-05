@@ -9,12 +9,12 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		borderBottomColor: "#000",
 		borderBottomWidth: 1,
-		backgroundColor: "#b22222"
+		// backgroundColor: "#b22222"
 	},
 	header: {
-		fontSize: 20,
-		// fontWeight: "bold",
-		color: "white",
+		fontSize: 23,
+		fontWeight: "bold",
+		color: "#b22222",
 	},
 	back: {
 		position: "absolute",
@@ -24,11 +24,7 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		right: 10,
 	},
-	label: {
-		fontSize: 30,
-		fontWeight: "bold",
-		marginHorizontal: 60,
-	},
+
 	logo: {
 		resizeMode: "stretch",
 		width: "100%",
