@@ -13,7 +13,7 @@ import {
 import Header from "../../components/Header";
 import student from "../../data/student.json";
 function Register({ navigation, route }) {
-  const { studentcode, dvhp, subjectSelected, money } = route.params;
+  const { studentcode, dvhp, subjectSelected, money, semester } = route.params;
   console.log(route.params);
   //console.log(subjectSeleted);
   const [name, setName] = useState("");
@@ -36,13 +36,12 @@ function Register({ navigation, route }) {
       }
     });
   }, []);
-  
-  
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
         <Header
-          label={"PHIẾU ĐĂNG KÝ HỌC LẠI"}
+          label={`PHIẾU ĐĂNG KÝ HỌC LẠI ${semester}`}
           goBack={() => navigation.goBack()}
           style={styles.Header}
         ></Header>
@@ -146,16 +145,21 @@ function Register({ navigation, route }) {
                   borderRadius: 7,
                   marginTop: 30,
                   alignItems: "center",
-                  alignSelf: 'center',
+                  alignSelf: "center",
                 }}
               >
                 <TouchableOpacity
                   onPress={() => navigation.navigate("HomeScreen")}
                 >
                   <Text
-                    style={{ color: "black", fontWeight: "600", fontSize: 13, textDecorationLine: "underline" }}
+                    style={{
+                      color: "black",
+                      fontWeight: "600",
+                      fontSize: 13,
+                      textDecorationLine: "underline",
+                    }}
                   >
-                          THOÁT     
+                    THOÁT
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -171,7 +175,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
- 
   },
   Header: {
     fontWeight: "bold",

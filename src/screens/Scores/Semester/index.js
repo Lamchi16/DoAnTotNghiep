@@ -9,24 +9,12 @@ import {
 } from "react-native";
 
 import Header from "../../../components/Header";
-import {
-  Table,
-  Row,
-  Rows,
-  Cell,
-  Col
-} from "react-native-table-component";
+import { Table, Row, Rows, Cell, Col } from "react-native-table-component";
 
-function Semester({navigation,route}) {
+function Semester({ navigation, route }) {
   //lấy điểm
-  const  { point,studentcode } = route.params;
-  const head = [
-    "Mã môn",
-		"Môn",
-		"ĐV học phần",
-		"Điểm", 
-    "Kết quả"
-	];
+  const { point, studentcode } = route.params;
+  const head = ["Mã môn", "Môn học", "ĐV học phần", "Điểm", "Kết quả"];
   return (
     <View style={styles.container}>
       <Header
@@ -59,7 +47,6 @@ function Semester({navigation,route}) {
               textStyle={styles.HeaderText}
             />
             <Rows data={point.lythuyet} textStyle={styles.TableText} />
-            
           </Table>
           <Text
             style={{
@@ -84,7 +71,11 @@ function Semester({navigation,route}) {
             />
             <Rows data={point.thuchanh} textStyle={styles.TableText} />
           </Table>
-          <Text style={{marginTop: 10, color: "red"}}> NOTE: Môn học lại của kỳ lẻ sẽ được đăng ký và học lại ở kỳ chẵn và ngược lại </Text>
+          <Text style={{ marginTop: 10, color: "red" }}>
+            {" "}
+            NOTE: Môn học lại của kỳ lẻ sẽ được đăng ký và học lại ở kỳ chẵn và
+            ngược lại{" "}
+          </Text>
 
           <View
             style={{
@@ -95,7 +86,12 @@ function Semester({navigation,route}) {
             }}
           >
             <TouchableOpacity
-              onPress={() => navigation.navigate("StudyAgain",{data:point,studentcode:studentcode})}
+              onPress={() =>
+                navigation.navigate("StudyAgain", {
+                  data: point,
+                  studentcode: studentcode,
+                })
+              }
               style={styles.button}
             >
               <Text style={styles.txtBtn}>ĐĂNG KÝ HỌC LẠI</Text>
@@ -132,7 +128,6 @@ const styles = StyleSheet.create({
   txtBtn: {
     fontSize: 15,
     color: "#fff",
-
   },
   HeadStyle: {
     height: 50,

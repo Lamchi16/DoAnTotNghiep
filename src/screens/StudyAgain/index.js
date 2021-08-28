@@ -13,7 +13,7 @@ import {
 } from "react-native";
 import styles from "../StudyAgain/styles";
 import Header from "../../components/Header";
-import SelectMultiple from 'react-native-select-multiple'
+import SelectMultiple from "react-native-select-multiple";
 
 const StudyAgain = ({ navigation, route }) => {
   const { data, studentcode } = route.params;
@@ -28,31 +28,33 @@ const StudyAgain = ({ navigation, route }) => {
       {
         _subjectLythuyet.push({
           name: e[1],
-          lythuyet: e[2]
+          lythuyet: e[2],
         });
       }
     });
     //console.log(data.lythuyet);
 
     //them mon thuc hanh
- //console.log(data.thuchanh);
+    //console.log(data.thuchanh);
     data.thuchanh.map((e) => {
       {
         _subjectThuchanh.push({
           name: e[1],
-          thuchanh: e[2]
-        })
+          thuchanh: e[2],
+        });
       }
-    })
-  //console.log(_subjectThuchanh);
+    });
+    //console.log(_subjectThuchanh);
 
     //  merge two array
     const map = new Map();
-    _subjectLythuyet.forEach(item => map.set(item.name, item));
-    _subjectThuchanh.forEach(item => map.set(item.name, { ...map.get(item.name), ...item }));
+    _subjectLythuyet.forEach((item) => map.set(item.name, item));
+    _subjectThuchanh.forEach((item) =>
+      map.set(item.name, { ...map.get(item.name), ...item })
+    );
     const mergedArr = Array.from(map.values());
     //console.log(mergedArr);
-  
+
     setSubject(mergedArr);
     showTotal();
   }, []);
@@ -61,7 +63,7 @@ const StudyAgain = ({ navigation, route }) => {
   const [position, setPosition] = useState(null);
   const [subject, setSubject] = useState([]);
   const [subjectSelected, setSubjectSelected] = useState("");
-  const [dvhp, setDvhp] = useState(0);  
+  const [dvhp, setDvhp] = useState(0);
   const [dvhplt, setDvhplt] = useState(0);
   const [dvhpth, setDvhpth] = useState(0);
   const showTotal = (selectedType) => {
@@ -69,33 +71,44 @@ const StudyAgain = ({ navigation, route }) => {
     setDvhplt(0);
     setDvhpth(0);
 
-    let type_array = []
-   // console.log(selectedType);
+    let type_array = [];
+    // console.log(selectedType);
     if (selectedType) {
-      selectedType.map(type => {
+      selectedType.map((type) => {
         type_array.push(type.value);
-      })
-    };
+      });
+    }
     console.log(type_array);
     let _dvhp = 0;
     let _dvhplt = 0;
     let _dvhpth = 0;
     try {
       //check xem đangg chọn checkbox lý thuyết hay thực hành hay là cả 2
-      if (type_array.includes("Lý thuyết") && !type_array.includes("Thực hành")) {
+      if (
+        type_array.includes("Lý thuyết") &&
+        !type_array.includes("Thực hành")
+      ) {
         _dvhplt = parseInt(subject[position - 1].lythuyet);
         _dvhp = 0;
         _dvhpth = 0;
-      } else if (!type_array.includes("Lý thuyết") && type_array.includes("Thực hành")) {
+      } else if (
+        !type_array.includes("Lý thuyết") &&
+        type_array.includes("Thực hành")
+      ) {
         _dvhpth = parseInt(subject[position - 1].thuchanh);
         _dvhp = 0;
-        _dvhplt = 0; 
-      } else if (type_array.includes("Lý thuyết") && type_array.includes("Thực hành")) {
-        _dvhp = parseInt(subject[position - 1].lythuyet) + parseInt(subject[position - 1].thuchanh);
+        _dvhplt = 0;
+      } else if (
+        type_array.includes("Lý thuyết") &&
+        type_array.includes("Thực hành")
+      ) {
+        _dvhp =
+          parseInt(subject[position - 1].lythuyet) +
+          parseInt(subject[position - 1].thuchanh);
         _dvhplt = parseInt(subject[position - 1].lythuyet);
-        _dvhpth =  parseInt(subject[position - 1].thuchanh);
+        _dvhpth = parseInt(subject[position - 1].thuchanh);
       } else {
-        _dvhp= 0;
+        _dvhp = 0;
         _dvhplt = 0;
         _dvhpth = 0;
       }
@@ -103,17 +116,13 @@ const StudyAgain = ({ navigation, route }) => {
       console.log(error);
     }
     // trả về NaN thì alert - To Check Value is a Number or Not
-    if(isNaN(_dvhp) || isNaN(_dvhplt) || isNaN(_dvhpth)) {
-      Alert.alert(
-        "Lỗi",
-        "Học phần này không có lý thuyết hoặc thực hành",
-        [
-          {
-          text:"Cancel",
-          style:"cancel",
-          }
-        ]
-      );
+    if (isNaN(_dvhp) || isNaN(_dvhplt) || isNaN(_dvhpth)) {
+      Alert.alert("Lỗi", "Học phần này không có lý thuyết hoặc thực hành", [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+      ]);
     } else {
       setDvhp(_dvhp);
       setDvhpth(_dvhpth);
@@ -121,23 +130,27 @@ const StudyAgain = ({ navigation, route }) => {
     }
     setType(selectedType);
   };
-
-  	const handleRegistry = () => {
-    
-      console.log({type});
-  	if (!studentcode || !subjectSelected || type == undefined || type.length === 0 ) {
-  		return Alert.alert("Vui lòng chọn đủ thông tin !");
-  	}
-  	{
+  console.log(data);
+  const handleRegistry = () => {
+    console.log({ type });
+    if (
+      !studentcode ||
+      !subjectSelected ||
+      type == undefined ||
+      type.length === 0
+    ) {
+      return Alert.alert("Vui lòng chọn đủ thông tin !");
+    }
+    {
       navigation.navigate("Register", {
+        semester: data.type,
         studentcode,
         subjectSelected,
         dvhp: dvhplt + dvhpth,
-        money:(dvhplt * 150000) + (dvhpth * 200000)
-
-      })
-  		return Alert.alert("Đăng kí thành công !");
-  	}
+        money: dvhplt * 150000 + dvhpth * 200000,
+      });
+      return Alert.alert("Đăng kí thành công !");
+    }
   };
 
   return (
@@ -166,7 +179,7 @@ const StudyAgain = ({ navigation, route }) => {
                 paddingRight: 5,
                 fontSize: 13,
                 margin: 5,
-                marginTop: 12
+                marginTop: 12,
               }}
             >
               CHỌN MÔN:
@@ -180,7 +193,7 @@ const StudyAgain = ({ navigation, route }) => {
                 setType([]);
               }}
             >
-              <Picker.Item label={'Chọn môn học'} />
+              <Picker.Item label={"Chọn môn học"} />
               {subject.map((e, index) => (
                 <Picker.Item key={index} label={e.name} value={e.name} />
               ))}
@@ -189,40 +202,59 @@ const StudyAgain = ({ navigation, route }) => {
           <View>
             <Text style={styles.textLabel}>CHỌN HỌC PHẦN:</Text>
             <SelectMultiple
-              items={['Thực hành', 'Lý thuyết']}
+              items={["Thực hành", "Lý thuyết"]}
               selectedItems={type}
-              onSelectionsChange={(selected) => showTotal(selected)} />
+              onSelectionsChange={(selected) => showTotal(selected)}
+            />
           </View>
           <View style={{ marginVertical: 5 }}>
+            <Text style={styles.textLabel}>SỐ ĐVHP LÝ THUYẾT: {dvhplt}</Text>
+          </View>
+
+          <View style={{ marginVertical: 5 }}>
+            <Text style={styles.textLabel}>SỐ ĐVHP THỰC HÀNH: {dvhpth}</Text>
+          </View>
+
+          <View style={{ marginVertical: 5 }}>
             <Text style={styles.textLabel}>
-              SỐ ĐVHP LÝ THUYẾT: {dvhplt}
+              ĐƠN GIÁ 1 ĐVHP LÝ THUYẾT : 150.000 VNĐ
             </Text>
           </View>
 
           <View style={{ marginVertical: 5 }}>
             <Text style={styles.textLabel}>
-              SỐ ĐVHP THỰC HÀNH: {dvhpth}
+              ĐƠN GIÁ 1 ĐVHP THỰC HÀNH: 200.000 VNĐ
             </Text>
           </View>
 
           <View style={{ marginVertical: 5 }}>
-            <Text style={styles.textLabel}>ĐƠN GIÁ 1 ĐVHP LÝ THUYẾT : 150.000 VNĐ</Text>
+            <Text style={styles.textLabel}>
+              GIÁ TIỀN LÝ THUYẾT:{" "}
+              {(dvhplt * 150000)
+                .toFixed(0)
+                .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}{" "}
+              VNĐ
+            </Text>
           </View>
 
           <View style={{ marginVertical: 5 }}>
-            <Text style={styles.textLabel}>ĐƠN GIÁ 1 ĐVHP THỰC HÀNH: 200.000 VNĐ</Text>
+            <Text style={styles.textLabel}>
+              GIÁ TIỀN THỰC HÀNH:{" "}
+              {(dvhpth * 200000)
+                .toFixed(0)
+                .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}{" "}
+              VNĐ
+            </Text>
           </View>
 
           <View style={{ marginVertical: 5 }}>
-            <Text style={styles.textLabel}>GIÁ TIỀN LÝ THUYẾT: {(dvhplt * 150000).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')} VNĐ</Text>
-          </View>
-
-          <View style={{ marginVertical: 5 }}>
-            <Text style={styles.textLabel}>GIÁ TIỀN THỰC HÀNH: {(dvhpth * 200000).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')} VNĐ</Text>
-          </View>
-
-          <View style={{ marginVertical: 5 }}>
-            <Text style={styles.textLabel}>TỔNG TIỀN: {((dvhplt * 150000) + (dvhpth * 200000)).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}  VNĐ</Text>
+            <Text style={styles.textLabel}>
+              TỔNG TIỀN:{" "}
+              {(dvhplt * 150000 + dvhpth * 200000)
+                .toFixed(0)
+                .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}{" "}
+              VNĐ
+            </Text>
             {/*  */}
           </View>
 
@@ -236,7 +268,7 @@ const StudyAgain = ({ navigation, route }) => {
                 paddingHorizontal: 10,
                 paddingVertical: 5,
                 borderRadius: 5,
-                marginTop: 50
+                marginTop: 50,
               }}
             >
               <Text style={{ textAlign: "center", color: "white" }}>

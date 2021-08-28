@@ -30,12 +30,11 @@ const Outcome = (props) => {
         style={styles.Header}
       ></Header>
       <View style={styles.wrapper}>
-       
-        {point.semester.map((se) => (   
+        {point.semester.map((se) => (
           <View
             key={se.type}
             style={{
-             marginTop: 30
+              marginTop: 30,
             }}
           >
             <TouchableOpacity
@@ -45,13 +44,10 @@ const Outcome = (props) => {
               style={styles.button}
             >
               <Text style={styles.txtBtn}>Học kỳ {se.type}</Text>
-             
-            </TouchableOpacity>  
+            </TouchableOpacity>
           </View>
         ))}
-        
       </View>
-
     </View>
   );
 };

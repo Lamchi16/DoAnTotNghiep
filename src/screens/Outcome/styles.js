@@ -18,13 +18,12 @@ const styles = StyleSheet.create({
     width: "auto",
     height: 50,
     borderRadius: 20,
-   justifyContent: "center"
-    
+    justifyContent: "center",
   },
   txtBtn: {
     fontSize: 20,
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
   },
 
   component: {

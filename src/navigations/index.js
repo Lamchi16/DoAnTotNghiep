@@ -7,7 +7,7 @@ import HomeScreen from "../screens/HomeScreen";
 import Login from "../screens/Login";
 //import SignUp from "../screens/SignUp";
 import Outcome from "../screens/Outcome";
-import Function from "../screens/Functions";
+// import Function from "../screens/Functions";
 import StudyAgain from "../screens/StudyAgain";
 import Register from "../screens/Register";
 import Semester from "../screens/Scores/Semester";
