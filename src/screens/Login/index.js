@@ -28,6 +28,9 @@ const Login = ({ navigation }) => {
     if (password.trim() === "") {
       return Alert.alert("Mật khẩu trống!");
     }
+    if (username.trim() === "" || password.trim() === "") {
+      return Alert.alert("Tên đăng nhập và mật khẩu trống!");
+    }
     // kiểm tra thông tin username & password
     const checkLogin = student.filter(
       (i) =>
@@ -35,7 +38,7 @@ const Login = ({ navigation }) => {
     );
     if (checkLogin.length === 0) {
       //thông báo
-      return Alert.alert("Tài khoản hoặc mật khẩu không đúng!");
+      return Alert.alert("Tên đăng nhập hoặc mật khẩu không đúng!");
     } else {
       navigation.navigate("BottomTab", { studentcode: username });
       return Alert.alert("Đăng nhập thành công!");
@@ -87,15 +90,7 @@ const Login = ({ navigation }) => {
             <Text style={styles.txtLogin}>Đăng nhập</Text>
           </TouchableOpacity>
         </View>
-
-        <View>
-          <TouchableOpacity
-            style={styles.buttonSignUp}
-            onPress={() => navigation.navigate("SignUp")}
-          >
-            <Text style={styles.textSignUp}>Đăng ký</Text>
-          </TouchableOpacity>
-        </View>
+        
       </View>
     </TouchableWithoutFeedback>
   );

@@ -7,7 +7,7 @@ import styles from "./styles";
 function Schedule({ navigation, route }) {
   return (
     <View style={styles.container}>
-      <Text>Sinh viên theo dõi lịch học lại trên website nhà trường</Text>
+      <Text>LOADING...</Text>
       <View
         style={{
           fontWeight: "bold",

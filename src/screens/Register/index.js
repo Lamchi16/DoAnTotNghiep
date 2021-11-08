@@ -162,6 +162,22 @@ function Register({ navigation, route }) {
                     THOÁT
                   </Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("Schedule")}
+                >
+                  <Text
+                    style={{
+                      color: "black",
+                      fontWeight: "600",
+                      fontSize: 13,
+                      textDecorationLine: "underline",
+                    }}
+                  >
+                    XEM PHIẾU ĐĂNG KÝ
+                  </Text>
+                </TouchableOpacity>
+
               </View>
             </View>
           </View>
